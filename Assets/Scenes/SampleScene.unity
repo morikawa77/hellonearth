@@ -842,7 +842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minGroundNormalY: 0.65
-  gravityModifier: 1
+  gravityModifier: 1.5
   maxSpeed: 7
   jumpTakeOffSpeed: 7
 --- !u!1 &639586799
