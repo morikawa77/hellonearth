@@ -3296,12 +3296,12 @@ PrefabInstance:
     - target: {fileID: 2172803550817287420, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.45
+      value: -8.03
       objectReference: {fileID: 0}
     - target: {fileID: 2172803550817287420, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.45
+      value: -3.4
       objectReference: {fileID: 0}
     - target: {fileID: 2172803550817287420, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1,
         type: 3}
@@ -3347,6 +3347,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5754495466115843837, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1,
+        type: 3}
+      propertyPath: m_UseAutoMass
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5754495466115843837, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.7317023
+      objectReference: {fileID: 0}
+    - target: {fileID: 5754495466115843837, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5754495466115843837, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1,
+        type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5754495466115843837, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1,
+        type: 3}
+      propertyPath: m_SleepingMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5754495466115843837, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1, type: 3}
