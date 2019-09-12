@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2172803550817287420}
   - component: {fileID: 3440493712288690178}
   - component: {fileID: 5754495466115843837}
-  - component: {fileID: 882232856839436374}
+  - component: {fileID: 8991025120291833073}
   m_Layer: 0
   m_Name: James
   m_TagString: Untagged
@@ -102,8 +102,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &882232856839436374
-PolygonCollider2D:
+--- !u!70 &8991025120291833073
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -115,28 +115,6 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.82, y: 0.6}
-    newSize: {x: 0.82, y: 0.6}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.13, y: 0.06}
-      - {x: 0.08, y: 0.14999999}
-      - {x: 0.04, y: 0.16}
-      - {x: -0.089999996, y: 0.16}
-      - {x: -0.14, y: 0.049999997}
-      - {x: -0.14, y: -0.089999996}
-      - {x: -0.13, y: -0.14999999}
-      - {x: -0.08, y: -0.22999999}
-      - {x: -0.03, y: -0.29999998}
-      - {x: 0.06, y: -0.29999998}
-      - {x: 0.089999996, y: -0.19999999}
-      - {x: 0.099999994, y: -0.06}
-      - {x: 0.13, y: 0.01}
+  m_Offset: {x: -0.0058327625, y: -0.05970184}
+  m_Size: {x: 0.23522659, y: 0.44020003}
+  m_Direction: 0
