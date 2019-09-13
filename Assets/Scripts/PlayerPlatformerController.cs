@@ -23,6 +23,7 @@ public class PlayerPlatformerController : PhysicsObject
     Vector2 move = Vector2.zero;
 
     move.x = Input.GetAxis("Horizontal");
+    
 
     if (Input.GetButtonDown("Jump") && grounded)
     {
@@ -43,8 +44,10 @@ public class PlayerPlatformerController : PhysicsObject
     }
 
     animator.SetBool("grounded", grounded);
-    animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
-    
+    animator.SetFloat("Speed", Mathf.Abs(velocity.x) / maxSpeed);
+
+
+
 
         targetVelocity = move * maxSpeed;
   }
