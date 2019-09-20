@@ -18,13 +18,17 @@ public class EnemyAngel : MonoBehaviour
     {
         
     }
-
-    public void AtaqueGrito()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        grito = true;
-        animator.Play("Anjo-Attack");
-        StartCoroutine(Tempo());
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            grito = true;
+            animator.SetBool("grito", grito);
+            StartCoroutine(Tempo());
+
+        }
     }
+
 
     public IEnumerator Tempo()
     {
@@ -37,8 +41,8 @@ public class EnemyAngel : MonoBehaviour
     {
 
         animator.Play("Anjo-Idle");
-        Destroy(gameObject);
+        
     }
 
-
+   
 }

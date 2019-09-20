@@ -4,23 +4,24 @@ using UnityEngine;
 
 public class GritoMorte : MonoBehaviour
 {
-    EnemyAngel anjo;
-    Animator animator;
-    bool grito = false;
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
+    //EnemyAngel anjo;
+    //Animator animator;
+    //bool grito = false;
 
 
-
-            collision.GetComponent<EnemyAngel>().AtaqueGrito();
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player"))
+    //    {
 
 
 
-        }
-    }
+    //        collision.GetComponent<EnemyAngel>().AtaqueGrito();
+
+
+
+    //    }
+    //}
     
 
 }
