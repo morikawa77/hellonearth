@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4460511808961813101}
   - component: {fileID: 7370066205372215387}
   - component: {fileID: 6080123901604286826}
-  - component: {fileID: 3534889105431721339}
   - component: {fileID: 5177713270501351851}
+  - component: {fileID: 2162714665700993297}
   m_Layer: 0
   m_Name: Anjo
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_LocalPosition: {x: 0.14, y: -2.36, z: 0}
   m_LocalScale: {x: 1.280184, y: 1.280184, z: 1.280184}
   m_Children:
-  - {fileID: 6388774394950176388}
+  - {fileID: 855850773641423032}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -102,7 +102,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!60 &3534889105431721339
+--- !u!114 &5177713270501351851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999039323104042436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 165b58db31305764c8a1eb86b51d2f97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gritoMorte: {fileID: 8359643474833829241}
+--- !u!60 &2162714665700993297
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,43 +149,23 @@ PolygonCollider2D:
       - {x: 0.06, y: 0.074999996}
       - {x: 0.03, y: 0.125}
       - {x: -0.26, y: 0.175}
-      - {x: -0.30954483, y: 0.23899424}
       - {x: -0.32, y: 0.315}
-      - {x: -0.34560663, y: 0.31537676}
-      - {x: -0.3468909, y: 0.31806716}
-      - {x: -0.35238364, y: 0.31127673}
-      - {x: -0.39844546, y: 0.24495813}
-      - {x: -0.39477018, y: 0.116507165}
-      - {x: -0.3731566, y: 0.089935884}
-      - {x: -0.35483485, y: 0.02522013}
-      - {x: -0.2680452, y: -0.04515055}
-      - {x: -0.11992471, y: -0.06909793}
-      - {x: -0.06006551, y: -0.06259003}
-      - {x: -0.060427483, y: -0.15638793}
-      - {x: -0.084100015, y: -0.21730015}
-      - {x: -0.034464847, y: -0.3119322}
-      - {x: 0.017623015, y: -0.35132316}
-      - {x: 0.007261398, y: -0.43111524}
-      - {x: -0.055838022, y: -0.4343487}
-      - {x: -0.010076952, y: -0.473123}
-      - {x: 0.01796923, y: -0.47710776}
+      - {x: -0.34, y: 0.33499998}
+      - {x: -0.37, y: 0.325}
+      - {x: -0.41, y: 0.275}
+      - {x: -0.42, y: 0.195}
+      - {x: -0.42, y: 0.095}
+      - {x: -0.37, y: 0.005}
+      - {x: -0.28, y: -0.085}
+      - {x: -0.099999994, y: -0.095}
+      - {x: -0.11, y: -0.295}
+      - {x: -0.08, y: -0.435}
+      - {x: -0.03, y: -0.505}
+      - {x: 0.01, y: -0.505}
       - {x: 0.08, y: -0.465}
       - {x: 0.08, y: -0.074999996}
       - {x: 0.29999998, y: -0.105}
---- !u!114 &5177713270501351851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 999039323104042436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 165b58db31305764c8a1eb86b51d2f97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gritoMorte: {fileID: 0}
---- !u!1 &6997701010876137597
+--- !u!1 &1522346267875246733
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -180,22 +173,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6388774394950176388}
-  - component: {fileID: 1460112149257177047}
+  - component: {fileID: 855850773641423032}
+  - component: {fileID: 8359643474833829241}
+  - component: {fileID: 257768968381912635}
   m_Layer: 0
-  m_Name: Grito
+  m_Name: RaioGrito
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6388774394950176388
+--- !u!4 &855850773641423032
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6997701010876137597}
+  m_GameObject: {fileID: 1522346267875246733}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.000000011639859, y: 0, z: 0}
   m_LocalScale: {x: 0.7811377, y: 0.7811377, z: 0.7811377}
@@ -203,20 +197,32 @@ Transform:
   m_Father: {fileID: 4460511808961813101}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1460112149257177047
+--- !u!114 &8359643474833829241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522346267875246733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6105b579e819354f897846c1d6230e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &257768968381912635
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6997701010876137597}
+  m_GameObject: {fileID: 1522346267875246733}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.017172337, y: 0.049024582}
+  m_Offset: {x: -0.044643342, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -227,5 +233,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.5111656, y: 1.3384628}
+  m_Size: {x: 2.6232467, y: 1}
   m_EdgeRadius: 0
