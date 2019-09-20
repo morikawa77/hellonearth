@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7370066205372215387}
   - component: {fileID: 6080123901604286826}
   - component: {fileID: 3534889105431721339}
+  - component: {fileID: 5177713270501351851}
   m_Layer: 0
   m_Name: Anjo
   m_TagString: Untagged
@@ -158,6 +159,19 @@ PolygonCollider2D:
       - {x: 0.08, y: -0.465}
       - {x: 0.08, y: -0.074999996}
       - {x: 0.29999998, y: -0.105}
+--- !u!114 &5177713270501351851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999039323104042436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 165b58db31305764c8a1eb86b51d2f97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gritoMorte: {fileID: 0}
 --- !u!1 &6997701010876137597
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,7 +183,7 @@ GameObject:
   - component: {fileID: 6388774394950176388}
   - component: {fileID: 1460112149257177047}
   m_Layer: 0
-  m_Name: Area de grito
+  m_Name: Grito
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
