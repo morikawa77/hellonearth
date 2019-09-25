@@ -9,7 +9,12 @@ public class MoveEnemy : MonoBehaviour
     [SerializeField] private float _rayCastDistance = 1f;
 
     private float _moveDir = 1;
+    SpriteRenderer spriteRenderer;
+    void Start()
+    {   
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
+    }
 
     void Update()
     {
@@ -20,12 +25,14 @@ public class MoveEnemy : MonoBehaviour
     {
         //sets the movement direction to -1 to make the gameObject move left
         _moveDir = -1;
+        spriteRenderer.flipX = false;
     }
 
     void TurnRight()
     {
         //sets the movement direction to 1 to make the gameObject move right
         _moveDir = 1;
+        spriteRenderer.flipX = true;
     }
 
     void Move()
