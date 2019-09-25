@@ -3,56 +3,53 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveEnemy : MonoBehaviour
-
 {
-    Rigidbody2D enemyRigidBody2D;
-    public int UnitsToMove = 25;
-    public float EnemySpeed = 250;
-    public bool _isFacingRight;
-    private float _startPos;
-    private float _endPos;
-    bool direita;
-    bool esquerda;
+    [SerializeField] private float _speed = 1;
+    [SerializeField] private float _rayCastOffset = 0.5f;
+    [SerializeField] private float _rayCastDistance = 1f;
 
-    public bool _moveRight = true;
+    private float _moveDir = 1;
 
 
-    // Use this for initialization
-    public void Awake()
+    void Update()
     {
-        enemyRigidBody2D = GetComponent<Rigidbody2D>();
-        _startPos = transform.position.x;
-        _endPos = _startPos + UnitsToMove;
-        _isFacingRight = transform.localScale.x > 0;
+        Move();
     }
 
-
-    // Update is called once per frame
-    public void Update()
+    void TurnLeft()
     {
-        if (_moveRight)
+        //sets the movement direction to -1 to make the gameObject move left
+        _moveDir = -1;
+    }
+
+    void TurnRight()
+    {
+        //sets the movement direction to 1 to make the gameObject move right
+        _moveDir = 1;
+    }
+
+    void Move()
+    {
+        //Setting up the start position of both raycasts
+        Vector2 rayCastOriginRight = transform.position + new Vector3(_rayCastOffset, 0, 0);
+        //Only difference is that we flip the rayCastOffset because we want it to point towards the left, therefore the "-" in front
+        Vector2 rayCastOriginLeft = transform.position + new Vector3(-_rayCastOffset, 0, 0);
+
+        if (Physics2D.Raycast(rayCastOriginRight, Vector2.right, _rayCastDistance))
         {
-            enemyRigidBody2D.AddForce(Vector2.right * EnemySpeed * Time.deltaTime);
-            if (!_isFacingRight)
-                Flip();
+            TurnLeft();
         }
-
-        if (enemyRigidBody2D.position.x >= _endPos)
-            _moveRight = false;
-        if (!_moveRight)
+        if (Physics2D.Raycast(rayCastOriginLeft, Vector2.left, _rayCastDistance))
         {
-            enemyRigidBody2D.AddForce(Vector2.left * EnemySpeed * Time.deltaTime);
-            if (_isFacingRight)
-                Flip();
+            TurnRight();
         }
-        if (enemyRigidBody2D.position.x <= _startPos)
-            _moveRight = true;
-    }
-    
-    public void Flip()
-    {
-        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-        _isFacingRight = transform.localScale.x > 0;
-    }
+       
+        //Moves the Gameobject every frame based on the _moveDir variable;
+        transform.Translate(new Vector2(_moveDir * _speed * Time.deltaTime, 0));
 
+
+        //Debug rays to visualize the raycasts, can be deleted, has no impact on gameplay;
+        Debug.DrawRay(rayCastOriginRight, Vector2.right * _rayCastDistance, Color.red);
+        Debug.DrawRay(rayCastOriginLeft, Vector2.left * _rayCastDistance, Color.blue);
+    }
 }
