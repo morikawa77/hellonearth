@@ -2,19 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveEnemy : MonoBehaviour
+public class MoveEnemy : PhysicsObject
 {
     [SerializeField] private float _speed = 1;
     [SerializeField] private float _rayCastOffset = 0.5f;
     [SerializeField] private float _rayCastDistance = 1f;
-
+    PlayerPlatformerController player;
     private float _moveDir = 1;
     SpriteRenderer spriteRenderer;
+
+    
     void Start()
     {   
         spriteRenderer = GetComponent<SpriteRenderer>();
-
+        player = GetComponent<PlayerPlatformerController>();
     }
+
+
 
     void Update()
     {
@@ -35,28 +39,34 @@ public class MoveEnemy : MonoBehaviour
         spriteRenderer.flipX = true;
     }
 
-    void Move()
+    public void Move()
     {
         //Setting up the start position of both raycasts
         Vector2 rayCastOriginRight = transform.position + new Vector3(_rayCastOffset, 0, 0);
         //Only difference is that we flip the rayCastOffset because we want it to point towards the left, therefore the "-" in front
         Vector2 rayCastOriginLeft = transform.position + new Vector3(-_rayCastOffset, 0, 0);
 
-        if (Physics2D.Raycast(rayCastOriginRight, Vector2.right, _rayCastDistance))
-        {
-            TurnLeft();
-        }
-        if (Physics2D.Raycast(rayCastOriginLeft, Vector2.left, _rayCastDistance))
-        {
-            TurnRight();
-        }
-       
         //Moves the Gameobject every frame based on the _moveDir variable;
+        //transform.Translate(new Vector2(_moveDir * _speed * Time.deltaTime, 0));
         transform.Translate(new Vector2(_moveDir * _speed * Time.deltaTime, 0));
 
 
-        //Debug rays to visualize the raycasts, can be deleted, has no impact on gameplay;
-        Debug.DrawRay(rayCastOriginRight, Vector2.right * _rayCastDistance, Color.red);
-        Debug.DrawRay(rayCastOriginLeft, Vector2.left * _rayCastDistance, Color.blue);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+       
+        if (collision.gameObject.CompareTag("virar"))
+        {
+            if (_moveDir == 1)
+            {
+                TurnLeft();
+            }
+            else if (_moveDir == -1)
+            {
+                TurnRight();
+            }
+        }
+    }
+
 }

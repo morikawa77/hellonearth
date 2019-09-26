@@ -10,9 +10,11 @@ public class PlayerPlatformerController : PhysicsObject
 
   private SpriteRenderer spriteRenderer;
   public Animator animator;
+  public bool ladodireito = false;
+  public bool ladoEsquerdo = false;
 
-  // Use this for initialization
-  void Awake()
+    // Use this for initialization
+    void Awake()
   {
     spriteRenderer = GetComponent<SpriteRenderer>();
     animator = GetComponent<Animator>();
@@ -21,8 +23,12 @@ public class PlayerPlatformerController : PhysicsObject
   protected override void ComputeVelocity()
   {
     Vector2 move = Vector2.zero;
+        //Vector2 move = Vector2.zero;
+        //public  Vector2 move { 
+        //get;
+        //set =  Vector2.zero; //prop para poser usar a variavel move
 
-    move.x = Input.GetAxis("Horizontal");
+        move.x = Input.GetAxis("Horizontal");
 
     bool punch = Input.GetButtonDown("Fire1");
 
@@ -58,4 +64,6 @@ public class PlayerPlatformerController : PhysicsObject
 
     targetVelocity = move * maxSpeed;
   }
+
+    
 }
