@@ -14,7 +14,7 @@ public class PlayerPlatformerController : PhysicsObject
   public bool ladoEsquerdo = false;
 
     // Use this for initialization
-    void Awake()
+  void Awake()
   {
     spriteRenderer = GetComponent<SpriteRenderer>();
     animator = GetComponent<Animator>();

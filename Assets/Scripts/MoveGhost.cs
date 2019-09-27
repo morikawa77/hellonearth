@@ -9,20 +9,41 @@ public class MoveGhost : PhysicsObject
     [SerializeField] private float _rayCastDistance = 1f;
     PlayerPlatformerController player;
     private float _moveDir = 1;
+    public Animator animator;
+    public Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
+    public static bool isAttacking = false;
 
-    
     void Start()
-    {   
+    {
+        rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         player = GetComponent<PlayerPlatformerController>();
+        animator = GetComponent<Animator>();
     }
-
-
 
     void Update()
     {
         Move();
+        if (isAttacking)
+        {
+            animator.SetBool("isAttacking", true);
+        }
+        else
+        {
+            animator.SetBool("isAttacking", false);
+        }
+    }
+    void FixedUpdate()
+    {
+        if (!isAttacking)
+        {
+            rb.velocity = new Vector2(_moveDir * _speed, rb.velocity.y);
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
     }
 
     void TurnLeft()
