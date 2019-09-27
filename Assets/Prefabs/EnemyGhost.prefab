@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4756865321800936223}
   - component: {fileID: 4756865321800936220}
   - component: {fileID: 4756865321800936221}
+  - component: {fileID: 9062818027841207817}
   - component: {fileID: 4756865321800936218}
   - component: {fileID: 8494217322036607809}
   m_Layer: 0
@@ -98,6 +99,23 @@ CapsuleCollider2D:
   m_Offset: {x: -0.025305096, y: -0.064413145}
   m_Size: {x: 0.19056398, y: 0.47516528}
   m_Direction: 0
+--- !u!114 &9062818027841207817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4756865321800936219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f92708c72c1e6c54282dd4c1b355ba08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minGroundNormalY: 0.65
+  gravityModifier: 1.5
+  _speed: 1
+  _rayCastOffset: 0.5
+  _rayCastDistance: 1
 --- !u!50 &4756865321800936218
 Rigidbody2D:
   serializedVersion: 4

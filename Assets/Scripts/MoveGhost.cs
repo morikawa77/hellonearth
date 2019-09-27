@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveEnemy : PhysicsObject
+public class MoveGhost : PhysicsObject
 {
     [SerializeField] private float _speed = 1;
     [SerializeField] private float _rayCastOffset = 0.5f;
@@ -10,17 +10,12 @@ public class MoveEnemy : PhysicsObject
     PlayerPlatformerController player;
     private float _moveDir = 1;
     SpriteRenderer spriteRenderer;
-    public Animator animator;
-    public Rigidbody2D rb;
 
-    public static bool isAttacking = false;
-
+    
     void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
+    {   
         spriteRenderer = GetComponent<SpriteRenderer>();
         player = GetComponent<PlayerPlatformerController>();
-        animator = GetComponent<Animator>();
     }
 
 
@@ -28,38 +23,20 @@ public class MoveEnemy : PhysicsObject
     void Update()
     {
         Move();
-        if (isAttacking)
-        {
-            animator.SetBool("isAttacking", true);
-        }
-        else
-        {
-            animator.SetBool("isAttacking", false);
-        }
     }
-    void FixedUpdate()
-    {
-        if (!isAttacking)
-        {
-            rb.velocity = new Vector2(_moveDir * _speed, rb.velocity.y);
-        }
-        else
-        {
-            rb.velocity = Vector2.zero;
-        }
-    }
+
     void TurnLeft()
     {
         //sets the movement direction to -1 to make the gameObject move left
         _moveDir = -1;
-        spriteRenderer.flipX = false;
+        spriteRenderer.flipX = true;
     }
 
     void TurnRight()
     {
         //sets the movement direction to 1 to make the gameObject move right
         _moveDir = 1;
-        spriteRenderer.flipX = true;
+        spriteRenderer.flipX = false;
     }
 
     public void Move()

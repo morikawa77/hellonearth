@@ -7,11 +7,10 @@ public class EnemyAttack : MonoBehaviour
     PlayerPlatformerController player;
     public LayerMask layerEnemy;
     public Transform verifica;
-    public float radiusAtack;
+    public float radiusAtack = 1.50f;
     private Transform target;
     public float distancia;
     public bool Atacando = false;
-    public float contagem;
     float timeNextAtack;
     // Start is called before the first frame update
     void Start()
