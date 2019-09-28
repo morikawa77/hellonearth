@@ -10,9 +10,7 @@ public class PlayerPlatformerController : PhysicsObject
 
   private SpriteRenderer spriteRenderer;
   public Animator animator;
-  public bool ladodireito = false;
-  public bool ladoEsquerdo = false;
-
+    public bool seguir = false;
     // Use this for initialization
   void Awake()
   {
@@ -65,5 +63,12 @@ public class PlayerPlatformerController : PhysicsObject
     targetVelocity = move * maxSpeed;
   }
 
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.gameObject.CompareTag("virar"))
+        {
+            seguir = true;
+        }
+    }
 }

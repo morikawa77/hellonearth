@@ -12,6 +12,8 @@ public class MoveEnemy : PhysicsObject
     SpriteRenderer spriteRenderer;
     public Animator animator;
     public Rigidbody2D rb;
+    public Transform target;//set target from inspector instead of looking in Update
+    public Transform myTransform;
 
     public static bool isAttacking = false;
 
@@ -19,34 +21,36 @@ public class MoveEnemy : PhysicsObject
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        player = GetComponent<PlayerPlatformerController>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPlatformerController>();
         animator = GetComponent<Animator>();
+        myTransform = this.GetComponent<Transform>();
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
 
 
     void Update()
     {
-        Move();
-        if (isAttacking)
+        if (player.seguir)
         {
-            animator.SetBool("isAttacking", true);
+            transform.position = Vector2.MoveTowards(transform.position, target.position, _moveDir * Time.deltaTime);
+
         }
         else
         {
-            animator.SetBool("isAttacking", false);
+            Move();
         }
     }
     void FixedUpdate()
     {
-        if (!isAttacking)
-        {
-            rb.velocity = new Vector2(_moveDir * _speed, rb.velocity.y);
-        }
-        else
-        {
-            rb.velocity = Vector2.zero;
-        }
+    //    if (!isAttacking)
+    //    {
+    //        rb.velocity = new Vector2(_moveDir * _speed, rb.velocity.y);
+    //    }
+    //    else
+    //    {
+    //        rb.velocity = Vector2.zero;
+    //    }
     }
     void TurnLeft()
     {

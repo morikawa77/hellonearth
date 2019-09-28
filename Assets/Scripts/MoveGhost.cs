@@ -8,43 +8,36 @@ public class MoveGhost : PhysicsObject
     [SerializeField] private float _rayCastOffset = 0.5f;
     [SerializeField] private float _rayCastDistance = 1f;
     PlayerPlatformerController player;
-    private float _moveDir = 1;
+    public float _moveDir = 1;
     public Animator animator;
     public Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
     public static bool isAttacking = false;
-
+    public Transform target;//set target from inspector instead of looking in Update
+    public Transform myTransform;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        player = GetComponent<PlayerPlatformerController>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPlatformerController>();
         animator = GetComponent<Animator>();
+        myTransform = this.GetComponent<Transform>();
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     void Update()
     {
-        Move();
-        if (isAttacking)
+        if (player.seguir)
         {
-            animator.SetBool("isAttacking", true);
+            transform.position = Vector2.MoveTowards(transform.position, target.position, _moveDir * Time.deltaTime);
+            
         }
         else
         {
-            animator.SetBool("isAttacking", false);
+            Move();
         }
     }
-    void FixedUpdate()
-    {
-        if (!isAttacking)
-        {
-            rb.velocity = new Vector2(_moveDir * _speed, rb.velocity.y);
-        }
-        else
-        {
-            rb.velocity = Vector2.zero;
-        }
-    }
+  
 
     void TurnLeft()
     {
@@ -79,6 +72,8 @@ public class MoveGhost : PhysicsObject
        
         if (collision.gameObject.CompareTag("virar"))
         {
+
+
             if (_moveDir == 1)
             {
                 TurnLeft();
@@ -88,6 +83,8 @@ public class MoveGhost : PhysicsObject
                 TurnRight();
             }
         }
-    }
 
+
+    }
+  
 }

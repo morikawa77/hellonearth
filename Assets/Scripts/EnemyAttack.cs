@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAttack : MonoBehaviour
+public class Attack : MonoBehaviour
 {
     PlayerPlatformerController player;
     public LayerMask layerEnemy;
@@ -12,18 +12,30 @@ public class EnemyAttack : MonoBehaviour
     public float distancia;
     public bool Atacando = false;
     float timeNextAtack;
+    public float naoEmpurra;
+    SpriteRenderer spriteRenderer;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player").GetComponent<PlayerPlatformerController>();
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         InimigoAtack();
+        if (Vector2.Distance(transform.position,target.position) <= naoEmpurra)
+        {
+            animator.Play("Enemy-Attack");
+
+        }
+      
     }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
