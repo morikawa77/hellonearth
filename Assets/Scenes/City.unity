@@ -6814,6 +6814,16 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 768764738}
+    - target: {fileID: 701827244763499735, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 701827244763499735, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1,
+        type: 3}
+      propertyPath: jumpTakeOffSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7910454964521253140, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1,
         type: 3}
       propertyPath: animator

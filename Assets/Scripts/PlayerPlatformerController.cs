@@ -10,6 +10,7 @@ public class PlayerPlatformerController : PhysicsObject
 
   private SpriteRenderer spriteRenderer;
   public Animator animator;
+    public bool flipar = false;
     public bool seguir = false;
     // Use this for initialization
   void Awake()
@@ -50,6 +51,14 @@ public class PlayerPlatformerController : PhysicsObject
 
 
     bool flipSprite = (spriteRenderer.flipX ? (move.x > 0.01f) : (move.x < 0.01f));
+    if (spriteRenderer.flipX)
+    {
+            flipar = true;   
+    }
+    else
+    {
+            flipar = false;
+    }
     if (flipSprite)
     {
       spriteRenderer.flipX = !spriteRenderer.flipX;

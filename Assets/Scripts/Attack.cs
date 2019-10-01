@@ -27,13 +27,29 @@ public class EnemyAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        InimigoAtack();
+        
         if (Vector2.Distance(transform.position,target.position) <= naoEmpurra)
         {
-            animator.Play("Ghost-Attack");
+           
+            if (player.flipar)
+            {
 
+                spriteRenderer.flipX = false;
+                animator.Play("Ghost-Attack");
+                InimigoAtack();
+            }
+            else if(player.flipar == false)
+            {
+                spriteRenderer.flipX = true;
+                animator.Play("Ghost-Attack");
+                InimigoAtack();
+            }
+          
         }
-      
+        else
+        {
+            animator.Play("Ghost");
+        }
     }
 
     private void OnDrawGizmosSelected()

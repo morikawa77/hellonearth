@@ -29,7 +29,17 @@ public class MoveGhost : PhysicsObject
     {
         if (player.seguir)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, _moveDir * Time.deltaTime);
+            if (player.flipar)
+            {
+                spriteRenderer.flipX = false;
+                transform.position = Vector2.MoveTowards(transform.position, target.position, _moveDir * Time.deltaTime);
+            }
+            else
+            {
+                transform.position = Vector2.MoveTowards(transform.position, target.position, _moveDir * Time.deltaTime);
+                spriteRenderer.flipX = true;
+            }
+
             
         }
         else
