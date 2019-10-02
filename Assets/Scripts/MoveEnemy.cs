@@ -31,9 +31,20 @@ public class MoveEnemy : PhysicsObject
 
     void Update()
     {
+
         if (player.seguir)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, _moveDir * Time.deltaTime);
+            if (player.flipar)
+            {
+                spriteRenderer.flipX = false;
+                transform.position = Vector2.MoveTowards(transform.position, target.position, _moveDir * Time.deltaTime);
+            }
+            else
+            {
+                transform.position = Vector2.MoveTowards(transform.position, target.position, _moveDir * Time.deltaTime);
+                spriteRenderer.flipX = true;
+            }
+
 
         }
         else
@@ -41,17 +52,7 @@ public class MoveEnemy : PhysicsObject
             Move();
         }
     }
-    void FixedUpdate()
-    {
-    //    if (!isAttacking)
-    //    {
-    //        rb.velocity = new Vector2(_moveDir * _speed, rb.velocity.y);
-    //    }
-    //    else
-    //    {
-    //        rb.velocity = Vector2.zero;
-    //    }
-    }
+   
     void TurnLeft()
     {
         //sets the movement direction to -1 to make the gameObject move left

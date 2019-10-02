@@ -8,4 +8,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/City.unity
     guid: 976596e14d4fc4d14a1a1a7cc1460c84
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: ae115ab7578f54cd596e03e0f1a14907
+  - enabled: 1
+    path: Assets/Scenes/Cemetery.unity
+    guid: e11881848aaa3454f81a5b9ec6cdfa32
+  - enabled: 1
+    path: Assets/Scenes/Church.unity
+    guid: 4feba9b2bcb134f09bee0488c36b75f7
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 1dd6372f4784d472287b45f4b4f46a9d
+  - enabled: 1
+    path: Assets/Scenes/GameWin.unity
+    guid: 0ac6c5b17a7b84d93a4003c6d81e4c98
+  - enabled: 1
+    path: Assets/Scenes/Start.unity
+    guid: 3c3b24feac29047c7b185f6ea858d0fc
+  - enabled: 1
+    path: Assets/Scenes/Options.unity
+    guid: 4d8dae6032d684e46906771a6d7d261b
   m_configObjects: {}
