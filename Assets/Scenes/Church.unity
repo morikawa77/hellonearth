@@ -40457,11 +40457,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.5919021
       objectReference: {fileID: 0}
-    - target: {fileID: 3440493712288690178, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1,
-        type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 701827244763499735, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1,
         type: 3}
       propertyPath: maxSpeed
@@ -40471,6 +40466,17 @@ PrefabInstance:
         type: 3}
       propertyPath: jumpTakeOffSpeed
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 701827244763499735, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1,
+        type: 3}
+      propertyPath: pfHealthBar
+      value: 
+      objectReference: {fileID: 4090514546342678, guid: 01a6b42a1d84b664c890d8dcb066becd,
+        type: 3}
+    - target: {fileID: 3440493712288690178, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1, type: 3}

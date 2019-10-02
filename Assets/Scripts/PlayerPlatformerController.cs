@@ -12,7 +12,12 @@ public class PlayerPlatformerController : PhysicsObject
   public Animator animator;
   public bool flipar = false;
   public bool seguir = false;
-  // Use this for initialization
+
+  // Health System
+  public Transform pfHealthBar;
+
+  PlayerPlatformerController player;
+
   void Awake()
   {
     spriteRenderer = GetComponent<SpriteRenderer>();
@@ -22,10 +27,6 @@ public class PlayerPlatformerController : PhysicsObject
   protected override void ComputeVelocity()
   {
     Vector2 move = Vector2.zero;
-    //Vector2 move = Vector2.zero;
-    //public  Vector2 move { 
-    //get;
-    //set =  Vector2.zero; //prop para poser usar a variavel move
 
     move.x = Input.GetAxis("Horizontal");
 
@@ -84,5 +85,29 @@ public class PlayerPlatformerController : PhysicsObject
     {
       seguir = true;
     }
+  }
+
+  HealthSystem healthSystem = new HealthSystem(100);
+  private void Start()
+  {
+    player = GameObject.FindWithTag("Player").GetComponent<PlayerPlatformerController>();
+    Vector3 pos = player.transform.position;
+    Debug.Log(pos);
+
+    Transform healthBarTransform = Instantiate(pfHealthBar, new Vector3(pos.x, pos.y + (float)0.5), Quaternion.identity);
+    HealthBar healthBar = healthBarTransform.GetComponent<HealthBar>();
+    healthBar.Setup(healthSystem);
+
+    healthBar.transform.parent = player.transform;
+
+    Debug.Log("Health: " + healthSystem.GetHealthPercent());
+    // healthSystem.Damage(30);
+    Debug.Log("Health: " + healthSystem.GetHealthPercent());
+
+  }
+
+  public void jamesDamaged(int damage)
+  {
+    healthSystem.Damage(damage);
   }
 }

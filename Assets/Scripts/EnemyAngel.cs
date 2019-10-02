@@ -9,6 +9,8 @@ public class EnemyAngel : MonoBehaviour
   bool grito = false;
 
   AudioSource audioData;
+
+  PlayerPlatformerController player;
   void Start()
   {
     animator = GetComponent<Animator>();
@@ -28,7 +30,7 @@ public class EnemyAngel : MonoBehaviour
       animator.SetBool("grito", grito);
       audioData.Play(0);
       StartCoroutine(Tempo());
-            
+      player.jamesDamaged(20);
     }
   }
 
@@ -37,16 +39,17 @@ public class EnemyAngel : MonoBehaviour
   {
     yield return new WaitForSeconds(6f);
     Ataque();
-       
+
 
   }
   //public EnemyAngel inimigo;
+
   public void Ataque()
   {
     audioData.Stop();
     animator.Play("Anjo-Idle");
-    Destroy(GameObject.FindGameObjectWithTag("Player"));
-    
+    // Destroy(GameObject.FindGameObjectWithTag("Player"));
+
 
   }
 
