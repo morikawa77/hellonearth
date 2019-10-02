@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2867034478877014176}
   - component: {fileID: 271894324246319979}
+  - component: {fileID: 6950111418645133227}
   m_Layer: 0
   m_Name: Colisao D
-  m_TagString: Untagged
+  m_TagString: cemiterio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41,7 +42,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.0901413, y: 3.7498922}
@@ -57,3 +58,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6850758, y: 10.230503}
   m_EdgeRadius: 0
+--- !u!114 &6950111418645133227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671680434131239922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 839a0654afc36de47abbef4589492806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

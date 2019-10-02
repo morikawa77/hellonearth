@@ -849,8 +849,8 @@ MonoBehaviour:
   yMargin: 1
   xSmooth: 3
   ySmooth: 3
-  maxXAndY: {x: 17.95, y: 0}
-  minXAndY: {x: 5.5, y: 3.25}
+  maxXAndY: {x: 16.52, y: 0}
+  minXAndY: {x: 5.97, y: 3.25}
 --- !u!1001 &546071439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1207,17 +1207,17 @@ PrefabInstance:
     - target: {fileID: 5142049018914006562, guid: 2796c2d443e154942933da80f665ca1a,
         type: 3}
       propertyPath: m_Offset.x
-      value: 2.0984483
+      value: 1.5880742
       objectReference: {fileID: 0}
     - target: {fileID: 5142049018914006562, guid: 2796c2d443e154942933da80f665ca1a,
         type: 3}
       propertyPath: m_Size.x
-      value: 2.9021502
+      value: 1.881402
       objectReference: {fileID: 0}
     - target: {fileID: 5142049018914006562, guid: 2796c2d443e154942933da80f665ca1a,
         type: 3}
       propertyPath: m_Offset.y
-      value: 2.7098794
+      value: 2.709879
       objectReference: {fileID: 0}
     - target: {fileID: 5142049018914006562, guid: 2796c2d443e154942933da80f665ca1a,
         type: 3}
@@ -2226,7 +2226,7 @@ PrefabInstance:
     - target: {fileID: 2867034478877014176, guid: 84bd1a0e3830a8142862561eaacb7edc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 32.15
+      value: 32.53
       objectReference: {fileID: 0}
     - target: {fileID: 2867034478877014176, guid: 84bd1a0e3830a8142862561eaacb7edc,
         type: 3}
@@ -6807,13 +6807,23 @@ PrefabInstance:
     - target: {fileID: 3440493712288690178, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1,
         type: 3}
       propertyPath: m_FlipX
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 701827244763499735, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1,
         type: 3}
       propertyPath: animator
       value: 
       objectReference: {fileID: 768764738}
+    - target: {fileID: 701827244763499735, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 701827244763499735, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1,
+        type: 3}
+      propertyPath: jumpTakeOffSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7910454964521253140, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1,
         type: 3}
       propertyPath: animator

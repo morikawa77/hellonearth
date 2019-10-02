@@ -28,6 +28,7 @@ public class EnemyAngel : MonoBehaviour
       animator.SetBool("grito", grito);
       audioData.Play(0);
       StartCoroutine(Tempo());
+            
     }
   }
 
@@ -36,6 +37,7 @@ public class EnemyAngel : MonoBehaviour
   {
     yield return new WaitForSeconds(6f);
     Ataque();
+       
 
   }
   //public EnemyAngel inimigo;
@@ -43,6 +45,8 @@ public class EnemyAngel : MonoBehaviour
   {
     audioData.Stop();
     animator.Play("Anjo-Idle");
+    Destroy(GameObject.FindGameObjectWithTag("Player"));
+    
 
   }
 

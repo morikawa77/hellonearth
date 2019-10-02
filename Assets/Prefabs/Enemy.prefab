@@ -123,7 +123,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   verifica: {fileID: 1023011976749993408}
-  radiusAtack: 1.5
+  radiusAtack: 0.75
   distancia: 0
   Atacando: 0
   naoEmpurra: 1.53
@@ -304,7 +304,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8593409727639817523}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.095, y: -0.075, z: 0.002}
+  m_LocalPosition: {x: 0.005, y: -0.075, z: -0.002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2520757411276236273}

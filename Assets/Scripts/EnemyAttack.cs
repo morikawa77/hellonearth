@@ -23,17 +23,33 @@ public class Attack : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
-
+    
     // Update is called once per frame
     void Update()
     {
-        InimigoAtack();
-        if (Vector2.Distance(transform.position,target.position) <= naoEmpurra)
+        if (Vector2.Distance(transform.position, target.position) <= naoEmpurra)
         {
-            animator.Play("Enemy-Attack");
+
+            if (player.flipar)
+            {
+
+                spriteRenderer.flipX = false;
+                animator.Play("Enemy-Attack");
+                InimigoAtack();
+            }
+            else if (player.flipar == false)
+            {
+                spriteRenderer.flipX = true;
+                animator.Play("Enemy-Attack");
+                InimigoAtack();
+            }
 
         }
-      
+        else
+        {
+            animator.Play("Enemy");
+        }
+
     }
 
     private void OnDrawGizmosSelected()
