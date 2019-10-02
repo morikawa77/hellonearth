@@ -10,9 +10,9 @@ public class PlayerPlatformerController : PhysicsObject
 
   private SpriteRenderer spriteRenderer;
   public Animator animator;
-    public bool flipar = false;
-    public bool seguir = false;
-    // Use this for initialization
+  public bool flipar = false;
+  public bool seguir = false;
+  // Use this for initialization
   void Awake()
   {
     spriteRenderer = GetComponent<SpriteRenderer>();
@@ -22,12 +22,12 @@ public class PlayerPlatformerController : PhysicsObject
   protected override void ComputeVelocity()
   {
     Vector2 move = Vector2.zero;
-        //Vector2 move = Vector2.zero;
-        //public  Vector2 move { 
-        //get;
-        //set =  Vector2.zero; //prop para poser usar a variavel move
+    //Vector2 move = Vector2.zero;
+    //public  Vector2 move { 
+    //get;
+    //set =  Vector2.zero; //prop para poser usar a variavel move
 
-        move.x = Input.GetAxis("Horizontal");
+    move.x = Input.GetAxis("Horizontal");
 
     bool punch = Input.GetButtonDown("Fire1");
 
@@ -46,23 +46,28 @@ public class PlayerPlatformerController : PhysicsObject
 
     if (punch && grounded)
     {
-      animator.SetTrigger("punch");
+      animator.Play("James-Punch");
     }
 
-
     bool flipSprite = (spriteRenderer.flipX ? (move.x > 0.01f) : (move.x < 0.01f));
+
     if (spriteRenderer.flipX)
     {
-            flipar = true;   
+      flipar = true;
     }
     else
     {
-            flipar = false;
+      flipar = false;
     }
-    if (flipSprite)
-    {
-      spriteRenderer.flipX = !spriteRenderer.flipX;
 
+
+    if (move.x < 0)
+    {
+      spriteRenderer.flipX = true;
+    }
+    else if (move.x > 0)
+    {
+      spriteRenderer.flipX = false;
     }
 
     animator.SetBool("grounded", grounded);
@@ -72,12 +77,12 @@ public class PlayerPlatformerController : PhysicsObject
     targetVelocity = move * maxSpeed;
   }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
+  private void OnTriggerEnter2D(Collider2D collision)
+  {
 
-        if (collision.gameObject.CompareTag("virar"))
-        {
-            seguir = true;
-        }
+    if (collision.gameObject.CompareTag("virar"))
+    {
+      seguir = true;
     }
+  }
 }
