@@ -101,8 +101,10 @@ public class PlayerPlatformerController : PhysicsObject
     healthBar.transform.parent = player.transform;
 
     Debug.Log("Health: " + healthSystem.GetHealthPercent());
-    // healthSystem.Damage(30);
-    Debug.Log("Health: " + healthSystem.GetHealthPercent());
+    healthSystem.Damage(50);
+    Debug.Log("Damaged: " + healthSystem.GetHealthPercent());
+    healthSystem.Heal(30);
+    Debug.Log("Healed: " + healthSystem.GetHealthPercent());
 
   }
 
