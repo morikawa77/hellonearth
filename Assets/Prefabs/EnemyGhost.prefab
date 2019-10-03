@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 8494217322036607809}
   m_Layer: 0
   m_Name: EnemyGhost
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -168,7 +168,6 @@ MonoBehaviour:
   gravityModifier: 1.5
   _speed: 1
   _rayCastOffset: 0.5
-  _rayCastDistance: 1
   _moveDir: 1
   animator: {fileID: 0}
   rb: {fileID: 0}

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - virar
   - cemiterio
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 5177713270501351851}
   - component: {fileID: 2162714665700993297}
   - component: {fileID: 7964227190390934083}
-  - component: {fileID: 1694138973043099300}
   - component: {fileID: 5360958548796795002}
   m_Layer: 0
   m_Name: Anjo
@@ -192,18 +191,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.5865946, y: 1.17}
   m_EdgeRadius: 0
---- !u!114 &1694138973043099300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 999039323104042436}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 161eb4f10239b4052a21705b3c6ab8f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &5360958548796795002
 AudioSource:
   m_ObjectHideFlags: 0

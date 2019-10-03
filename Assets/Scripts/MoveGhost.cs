@@ -17,10 +17,10 @@ public class MoveGhost : PhysicsObject
   public Transform myTransform;
   void Start()
   {
-    rb = GetComponent<Rigidbody2D>();
-    spriteRenderer = GetComponent<SpriteRenderer>();
+    rb = FindClosestEnemy().GetComponent<Rigidbody2D>();
+    spriteRenderer = FindClosestEnemy().GetComponent<SpriteRenderer>();
     player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPlatformerController>();
-    animator = GetComponent<Animator>();
+    animator = FindClosestEnemy().GetComponent<Animator>();
     myTransform = this.GetComponent<Transform>();
     target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
   }
@@ -47,7 +47,25 @@ public class MoveGhost : PhysicsObject
       Move();
     }
   }
-
+    public GameObject FindClosestEnemy()
+    {
+        GameObject[] gos;
+        gos = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject closest = null;
+        float distance = Mathf.Infinity;
+        Vector3 position = transform.position;
+        foreach (GameObject go in gos)
+        {
+            Vector3 diff = go.transform.position - position;
+            float curDistance = diff.sqrMagnitude;
+            if (curDistance < distance)
+            {
+                closest = go;
+                distance = curDistance;
+            }
+        }
+        return closest;
+    }
 
   void TurnLeft()
   {
