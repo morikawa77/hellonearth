@@ -37,14 +37,12 @@ public class EnemyAttack : MonoBehaviour
         spriteRenderer.flipX = false;
         animator.Play("Ghost-Attack");
         InimigoAtack();
-        InimigoAttackHandler();
       }
       else if (player.flipar == false)
       {
         spriteRenderer.flipX = true;
         animator.Play("Ghost-Attack");
         InimigoAtack();
-        InimigoAttackHandler();
       }
 
     }
@@ -67,7 +65,7 @@ public class EnemyAttack : MonoBehaviour
     {
       if (timeNextAtack <= 0)
       {
-
+        InimigoAttackHandler();
         Debug.Log(enimiesAttack[i].name);
         timeNextAtack = 5f;
       }
