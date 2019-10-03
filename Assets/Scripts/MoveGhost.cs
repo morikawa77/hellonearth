@@ -8,11 +8,12 @@ public class MoveGhost : PhysicsObject
   [SerializeField] private float _rayCastOffset = 0.5f;
   // [SerializeField] private float _rayCastDistance = 1f;
   PlayerPlatformerController player;
-  public float _moveDir = 1;
-  public Animator animator;
-  public Rigidbody2D rb;
+    public Transform verifica;
+    public float distanciaMov = 1.50f;
+    public float _moveDir = 1;
+  Animator animator;
+  Rigidbody2D rb;
   SpriteRenderer spriteRenderer;
-  public static bool isAttacking = false;
   public Transform target;//set target from inspector instead of looking in Update
   public Transform myTransform;
   void Start()
@@ -21,13 +22,13 @@ public class MoveGhost : PhysicsObject
     spriteRenderer = FindClosestEnemy().GetComponent<SpriteRenderer>();
     player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPlatformerController>();
     animator = FindClosestEnemy().GetComponent<Animator>();
-    myTransform = this.GetComponent<Transform>();
+    myTransform = FindClosestEnemy().GetComponent<Transform>();
     target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
   }
 
   void Update()
   {
-    if (player.seguir)
+    if (player.seguir && Vector2.Distance(transform.position,target.position) <= distanciaMov)
     {
       if (player.flipar)
       {
@@ -67,7 +68,13 @@ public class MoveGhost : PhysicsObject
         return closest;
     }
 
-  void TurnLeft()
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(verifica.position, distanciaMov);
+    }
+
+    void TurnLeft()
   {
     //sets the movement direction to -1 to make the gameObject move left
     _moveDir = -1;

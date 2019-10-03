@@ -9,9 +9,11 @@ public class MoveEnemy : PhysicsObject
   // [SerializeField] private float _rayCastDistance = 1f;
   PlayerPlatformerController player;
   private float _moveDir = 1;
-  SpriteRenderer spriteRenderer;
-  public Animator animator;
-  public Rigidbody2D rb;
+    public Transform verifica;
+    public float distanciaMov = 1.50f;
+    SpriteRenderer spriteRenderer;
+   Animator animator;
+   Rigidbody2D rb;
   public Transform target;//set target from inspector instead of looking in Update
   public Transform myTransform;
 
@@ -19,41 +21,64 @@ public class MoveEnemy : PhysicsObject
 
   void Start()
   {
-    rb = GetComponent<Rigidbody2D>();
-    spriteRenderer = GetComponent<SpriteRenderer>();
-    player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPlatformerController>();
-    animator = GetComponent<Animator>();
-    myTransform = this.GetComponent<Transform>();
-    target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        rb = FindClosestEnemy().GetComponent<Rigidbody2D>();
+        spriteRenderer = FindClosestEnemy().GetComponent<SpriteRenderer>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPlatformerController>();
+        animator = FindClosestEnemy().GetComponent<Animator>();
+        myTransform = FindClosestEnemy().GetComponent<Transform>();
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
   }
 
 
 
-  void Update()
-  {
 
-    if (player.seguir)
+    void Update()
     {
-      if (player.flipar)
-      {
-        spriteRenderer.flipX = false;
-        transform.position = Vector2.MoveTowards(transform.position, target.position, _moveDir * Time.deltaTime);
-      }
-      else
-      {
-        transform.position = Vector2.MoveTowards(transform.position, target.position, _moveDir * Time.deltaTime);
-        spriteRenderer.flipX = true;
-      }
+        if (player.seguir && Vector2.Distance(transform.position, target.position) <= distanciaMov)
+        {
+            if (player.flipar)
+            {
+                spriteRenderer.flipX = false;
+                transform.position = Vector2.MoveTowards(transform.position, target.position, _moveDir * Time.deltaTime);
+            }
+            else
+            {
+                transform.position = Vector2.MoveTowards(transform.position, target.position, _moveDir * Time.deltaTime);
+                spriteRenderer.flipX = true;
+            }
 
 
+        }
+        else
+        {
+            Move();
+        }
     }
-    else
+    private void OnDrawGizmosSelected()
     {
-      Move();
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(verifica.position, distanciaMov);
     }
-  }
-
-  void TurnLeft()
+    public GameObject FindClosestEnemy()
+    {
+    GameObject[] gos;
+    gos = GameObject.FindGameObjectsWithTag("Enemy");
+    GameObject closest = null;
+    float distance = Mathf.Infinity;
+    Vector3 position = transform.position;
+    foreach (GameObject go in gos)
+    {
+        Vector3 diff = go.transform.position - position;
+        float curDistance = diff.sqrMagnitude;
+        if (curDistance < distance)
+        {
+            closest = go;
+            distance = curDistance;
+        }
+    }
+    return closest;
+    }
+void TurnLeft()
   {
     //sets the movement direction to -1 to make the gameObject move left
     _moveDir = -1;
@@ -67,7 +92,7 @@ public class MoveEnemy : PhysicsObject
     spriteRenderer.flipX = true;
   }
 
-  public void Move()
+public void Move()
   {
     //Setting up the start position of both raycasts
     Vector2 rayCastOriginRight = transform.position + new Vector3(_rayCastOffset, 0, 0);
