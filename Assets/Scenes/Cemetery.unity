@@ -14605,7 +14605,7 @@ MonoBehaviour:
   xSmooth: 3
   ySmooth: 3
   maxXAndY: {x: 16.9, y: 0}
-  minXAndY: {x: 1.75, y: 1}
+  minXAndY: {x: 1.68, y: 1}
 --- !u!4 &1681751107 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3306561387862157099, guid: 3a1a674cb7186344eb30047e4d77bdd5,
