@@ -36,15 +36,15 @@ public class EnemyAttack : MonoBehaviour
 
         spriteRenderer.flipX = false;
         animator.Play("Ghost-Attack");
-               
-                InimigoAtack();
+
+        InimigoAtack();
       }
       else if (player.flipar == false)
       {
         spriteRenderer.flipX = true;
         animator.Play("Ghost-Attack");
-                
-                InimigoAtack();
+
+        InimigoAtack();
       }
 
     }
@@ -65,24 +65,24 @@ public class EnemyAttack : MonoBehaviour
     Collider2D[] enimiesAttack = Physics2D.OverlapCircleAll(verifica.position, radiusAtack, layerEnemy);
     for (int i = 0; i < enimiesAttack.Length; i++)
     {
-            
-            if (timeNextAtack <= 0)
-            {
 
-                Debug.Log(enimiesAttack[i].name);
-                timeNextAtack = 2f;
-                InimigoAttackHandler();
-            }
-            else
-            {
-                timeNextAtack -= Time.deltaTime;
-            }
-        }
+      if (timeNextAtack <= 0)
+      {
+
+        Debug.Log(enimiesAttack[i].name);
+        timeNextAtack = 2f;
+        InimigoAttackHandler();
+      }
+      else
+      {
+        timeNextAtack -= Time.deltaTime;
+      }
+    }
   }
 
   public void InimigoAttackHandler()
   {
     Debug.Log("James recebeu ataque");
-    player.jamesDamaged(10);
+    player.jamesDamaged(25);
   }
 }

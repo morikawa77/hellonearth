@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerPlatformerController : PhysicsObject
 {
@@ -113,5 +114,10 @@ public class PlayerPlatformerController : PhysicsObject
   {
     healthSystem.Damage(damage);
     Debug.Log("Damaged: " + healthSystem.GetHealthPercent());
+    if (healthSystem.GetHealthPercent() == 0)
+    {
+      Destroy(GameObject.FindGameObjectWithTag("Player"));
+      SceneManager.LoadScene("GameOver");
+    }
   }
 }
