@@ -11,7 +11,7 @@ public class EnemyAttack : MonoBehaviour
   private Transform target;
   public float distancia;
   public bool Atacando = false;
-  float timeNextAtack;
+  public float timeNextAtack = 1f;
   public float naoEmpurra;
   SpriteRenderer spriteRenderer;
   public Animator animator;
@@ -36,13 +36,15 @@ public class EnemyAttack : MonoBehaviour
 
         spriteRenderer.flipX = false;
         animator.Play("Ghost-Attack");
-        InimigoAtack();
+               
+                InimigoAtack();
       }
       else if (player.flipar == false)
       {
         spriteRenderer.flipX = true;
         animator.Play("Ghost-Attack");
-        InimigoAtack();
+                
+                InimigoAtack();
       }
 
     }
@@ -63,17 +65,19 @@ public class EnemyAttack : MonoBehaviour
     Collider2D[] enimiesAttack = Physics2D.OverlapCircleAll(verifica.position, radiusAtack, layerEnemy);
     for (int i = 0; i < enimiesAttack.Length; i++)
     {
-      if (timeNextAtack <= 0)
-      {
-        InimigoAttackHandler();
-        Debug.Log(enimiesAttack[i].name);
-        timeNextAtack = 5f;
-      }
-      else
-      {
-        timeNextAtack -= Time.deltaTime;
-      }
-    }
+            
+            if (timeNextAtack <= 0)
+            {
+
+                Debug.Log(enimiesAttack[i].name);
+                timeNextAtack = 2f;
+                InimigoAttackHandler();
+            }
+            else
+            {
+                timeNextAtack -= Time.deltaTime;
+            }
+        }
   }
 
   public void InimigoAttackHandler()
