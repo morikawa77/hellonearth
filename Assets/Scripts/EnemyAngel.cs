@@ -49,8 +49,6 @@ public class EnemyAngel : MonoBehaviour
     audioData.Stop();
     animator.Play("Anjo-Idle");
     // Destroy(GameObject.FindGameObjectWithTag("Player"));
-
-
   }
 
 

@@ -67,8 +67,7 @@ public class Attack : MonoBehaviour
       {
         Debug.Log(enimiesAttack[i].name);
         timeNextAtack = 5f;
-        // Não ta chegando aqui // não printa o debug acima
-        InimigoAtackHandler();
+        InimigoAttackHandler();
       }
       else
       {
@@ -78,7 +77,7 @@ public class Attack : MonoBehaviour
     }
   }
 
-  public void InimigoAtackHandler()
+  public void InimigoAttackHandler()
   {
     Debug.Log("James recebeu ataque");
     player.jamesDamaged(10);

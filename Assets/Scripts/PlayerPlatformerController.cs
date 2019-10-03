@@ -101,16 +101,17 @@ public class PlayerPlatformerController : PhysicsObject
     healthBar.transform.parent = player.transform;
 
     // testing healthBar
-    Debug.Log("Health: " + healthSystem.GetHealthPercent());
-    healthSystem.Damage(50);
-    Debug.Log("Damaged: " + healthSystem.GetHealthPercent());
-    healthSystem.Heal(30);
-    Debug.Log("Healed: " + healthSystem.GetHealthPercent());
+    // Debug.Log("Health: " + healthSystem.GetHealthPercent());
+    // healthSystem.Damage(50);
+    // Debug.Log("Damaged: " + healthSystem.GetHealthPercent());
+    // healthSystem.Heal(30);
+    // Debug.Log("Healed: " + healthSystem.GetHealthPercent());
 
   }
 
   public void jamesDamaged(int damage)
   {
     healthSystem.Damage(damage);
+    Debug.Log("Damaged: " + healthSystem.GetHealthPercent());
   }
 }
