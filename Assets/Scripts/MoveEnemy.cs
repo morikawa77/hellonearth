@@ -39,11 +39,11 @@ public class MoveEnemy : PhysicsObject
             if (player.flipar)
             {
                 spriteRenderer.flipX = false;
-                transform.position = Vector2.MoveTowards(transform.position, target.position, _moveDir * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, target.position, -_moveDir * Time.deltaTime);
             }
             else
             {
-                transform.position = Vector2.MoveTowards(transform.position, target.position, _moveDir * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, target.position, -_moveDir * Time.deltaTime);
                 spriteRenderer.flipX = true;
             }
 
@@ -82,14 +82,14 @@ void TurnLeft()
   {
     //sets the movement direction to -1 to make the gameObject move left
     _moveDir = -1;
-    spriteRenderer.flipX = false;
+    spriteRenderer.flipX = true;
   }
 
   void TurnRight()
   {
     //sets the movement direction to 1 to make the gameObject move right
     _moveDir = 1;
-    spriteRenderer.flipX = true;
+    spriteRenderer.flipX = false;
   }
 
 public void Move()

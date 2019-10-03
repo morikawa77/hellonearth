@@ -71,8 +71,8 @@ GameObject:
   - component: {fileID: 4756865321800936223}
   - component: {fileID: 4756865321800936220}
   - component: {fileID: 4756865321800936221}
-  - component: {fileID: 7139018592415048409}
   - component: {fileID: 9062818027841207817}
+  - component: {fileID: 5001222958218117856}
   - component: {fileID: 4756865321800936218}
   - component: {fileID: 8494217322036607809}
   m_Layer: 0
@@ -162,27 +162,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.025305096, y: -0.064413145}
   m_Size: {x: 0.19056398, y: 0.47516528}
   m_Direction: 0
---- !u!114 &7139018592415048409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4756865321800936219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfd28d3d9d962544e8996196cb3e8f1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layerEnemy:
-    serializedVersion: 2
-    m_Bits: 0
-  verifica: {fileID: 458772499850103876}
-  radiusAtack: 0.84
-  distancia: 0.86
-  Atacando: 0
-  naoEmpurra: 0.89
-  animator: {fileID: 0}
 --- !u!114 &9062818027841207817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,8 +181,29 @@ MonoBehaviour:
   verifica: {fileID: 1430182283}
   distanciaMov: 1.5
   _moveDir: 1
-  target: {fileID: 0}
+  target: {fileID: 2172803550817287420, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1, type: 3}
   myTransform: {fileID: 0}
+--- !u!114 &5001222958218117856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4756865321800936219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe8fad6019d6e204ebbc76549c56fe01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerEnemy:
+    serializedVersion: 2
+    m_Bits: 0
+  verifica: {fileID: 458772499850103876}
+  radiusAtack: 0.97
+  distancia: 0.63
+  Atacando: 1
+  naoEmpurra: 0.55
+  animator: {fileID: 0}
 --- !u!50 &4756865321800936218
 Rigidbody2D:
   serializedVersion: 4
