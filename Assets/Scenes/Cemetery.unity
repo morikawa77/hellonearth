@@ -13692,48 +13692,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4756865321800936220, guid: 8988b6651e3659a4490d00a314d8a1f1,
-        type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9062818027841207817, guid: 8988b6651e3659a4490d00a314d8a1f1,
         type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 1141865789}
-    - target: {fileID: 9062818027841207817, guid: 8988b6651e3659a4490d00a314d8a1f1,
-        type: 3}
-      propertyPath: _moveDir
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9062818027841207817, guid: 8988b6651e3659a4490d00a314d8a1f1,
-        type: 3}
-      propertyPath: verifica
-      value: 
-      objectReference: {fileID: 693102179}
-    - target: {fileID: 8494217322036607809, guid: 8988b6651e3659a4490d00a314d8a1f1,
-        type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1430182283, guid: 8988b6651e3659a4490d00a314d8a1f1, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8712215043014235554, guid: 8988b6651e3659a4490d00a314d8a1f1, type: 3}
-    - {fileID: 4946079330677260675, guid: 8988b6651e3659a4490d00a314d8a1f1, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8988b6651e3659a4490d00a314d8a1f1, type: 3}
 --- !u!4 &693102178 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4756865321800936223, guid: 8988b6651e3659a4490d00a314d8a1f1,
-    type: 3}
-  m_PrefabInstance: {fileID: 693102177}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &693102179 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1430182283, guid: 8988b6651e3659a4490d00a314d8a1f1,
     type: 3}
   m_PrefabInstance: {fileID: 693102177}
   m_PrefabAsset: {fileID: 0}
@@ -14637,7 +14605,7 @@ MonoBehaviour:
   xSmooth: 3
   ySmooth: 3
   maxXAndY: {x: 16.9, y: 0}
-  minXAndY: {x: 2.08, y: 1}
+  minXAndY: {x: 1.75, y: 1}
 --- !u!4 &1681751107 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3306561387862157099, guid: 3a1a674cb7186344eb30047e4d77bdd5,
