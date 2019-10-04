@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2162714665700993297}
   - component: {fileID: 7964227190390934083}
   - component: {fileID: 5360958548796795002}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Anjo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32,7 +32,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.14, y: -2.36, z: 0}
   m_LocalScale: {x: 1.280184, y: 1.280184, z: 1.280184}
-  m_Children: []
+  m_Children:
+  - {fileID: 8287510932716845529}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -95,7 +96,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 05903241716db2d42bb8fa58db2fd441, type: 2}
-  m_CullingMode: 0
+  m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -115,6 +116,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 165b58db31305764c8a1eb86b51d2f97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  layerEnemy:
+    serializedVersion: 2
+    m_Bits: 1024
+  verifica: {fileID: 8287510932716845529}
+  radiusAtack: 1.5
+  distancia: 0
+  timeNextAtack: 0.5
 --- !u!60 &2162714665700993297
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -178,7 +186,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06570172, y: 0}
+  m_Offset: {x: -0.0076988935, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -189,7 +197,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.5865946, y: 1.17}
+  m_Size: {x: 2.0784366, y: 1.17}
   m_EdgeRadius: 0
 --- !u!82 &5360958548796795002
 AudioSource:
@@ -287,3 +295,33 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &4066843974602381585
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8287510932716845529}
+  m_Layer: 10
+  m_Name: verifica
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8287510932716845529
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4066843974602381585}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4460511808961813101}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

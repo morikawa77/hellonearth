@@ -7,10 +7,16 @@ public class EnemyAngel : MonoBehaviour
 {
   Animator animator;
   bool grito = false;
+    public LayerMask layerEnemy;
+    public Transform verifica;
+    public float radiusAtack = 1.50f;
+    private Transform target;
+    public float distancia;
+    AudioSource audioData;
+    public float timeNextAtack = 0.5f;
+    
 
-  AudioSource audioData;
-
-  PlayerPlatformerController player;
+    PlayerPlatformerController player;
   void Start()
   {
     animator = GetComponent<Animator>();
@@ -20,7 +26,7 @@ public class EnemyAngel : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-
+        
   }
   private void OnTriggerEnter2D(Collider2D collision)
   {
@@ -28,28 +34,58 @@ public class EnemyAngel : MonoBehaviour
     {
       grito = true;
       animator.SetBool("grito", grito);
+      InimigoAtack();
+
       audioData.Play(0);
       StartCoroutine(Tempo());
     }
   }
+    void InimigoAtack()
+    {
+        Collider2D[] enimiesAttack = Physics2D.OverlapCircleAll(verifica.position, radiusAtack, layerEnemy);
+        for (int i = 0; i < enimiesAttack.Length; i++)
+        {
+
+            if (timeNextAtack <= 0)
+            {
+
+                Debug.Log(enimiesAttack[i].name);
+                timeNextAtack = 2f;
+                InimigoAttackHandler();
+            }
+            else
+            {
+                timeNextAtack -= Time.deltaTime;
+            }
+        }
+    }
+
+    public IEnumerator Tempo()
+    {
+        yield return new WaitForSeconds(2f);
+        audioData.Stop();
+        animator.Play("Anjo-Idle");
+        
+        //Ataque();
 
 
-  public IEnumerator Tempo()
-  {
-    yield return new WaitForSeconds(6f);
-    Ataque();
+    }
+    ////public EnemyAngel inimigo;
 
+    //public void Ataque()
+    //{
 
-  }
-  //public EnemyAngel inimigo;
+    //  // Destroy(GameObject.FindGameObjectWithTag("Player"));
+    //}
 
-  public void Ataque()
-  {
-    audioData.Stop();
-    animator.Play("Anjo-Idle");
-    player.jamesDamaged(20);
-    // Destroy(GameObject.FindGameObjectWithTag("Player"));
-  }
-
-
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(verifica.position, radiusAtack);
+    }
+    public void InimigoAttackHandler()
+    {
+        Debug.Log("James recebeu ataque");
+        player.jamesDamaged(25);
+    }
 }

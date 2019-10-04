@@ -11,7 +11,7 @@ public class EnemyAttack : MonoBehaviour
   private Transform target;
   public float distancia;
   public bool Atacando = false;
-  public float timeNextAtack = 1f;
+  public float timeNextAtack = 0.5f;
   public float naoEmpurra;
   SpriteRenderer spriteRenderer;
   public Animator animator;

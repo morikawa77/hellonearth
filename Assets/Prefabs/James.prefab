@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 2062327608472060401}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.45, y: -3.45, z: 0}
-  m_LocalScale: {x: 2.7324624, y: 2.7324624, z: 2.7324624}
+  m_LocalScale: {x: 2.289155, y: 2.289155, z: 2.289155}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: fdb550509659347d4b4c37d05c566ad2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.82, y: 0.6}
@@ -118,9 +118,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minGroundNormalY: 0.65
   gravityModifier: 1.5
-  maxSpeed: 7
-  jumpTakeOffSpeed: 7
-  animator: {fileID: 0}
+  maxSpeed: 5
+  jumpTakeOffSpeed: 10
+  animator: {fileID: 637743844}
+  flipar: 0
+  seguir: 0
+  pfHealthBar: {fileID: 4090514546342678, guid: 01a6b42a1d84b664c890d8dcb066becd,
+    type: 3}
 --- !u!70 &8991025120291833073
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

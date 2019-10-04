@@ -1886,15 +1886,6 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: 120, y: -36, z: 0}
-    second:
-      m_TileIndex: 7
-      m_TileSpriteIndex: 7
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 1
-      m_ColliderType: 1
   - first: {x: 139, y: -36, z: 0}
     second:
       m_TileIndex: 3
@@ -3498,6 +3489,15 @@ Tilemap:
       m_TileFlags: 1
       m_ColliderType: 1
   - first: {x: 118, y: -35, z: 0}
+    second:
+      m_TileIndex: 7
+      m_TileSpriteIndex: 7
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
+  - first: {x: 120, y: -35, z: 0}
     second:
       m_TileIndex: 7
       m_TileSpriteIndex: 7
@@ -41156,11 +41156,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Anjo
       objectReference: {fileID: 0}
-    - target: {fileID: 6997701010876137597, guid: 58df3d34af8fb8f4db8b419abab9dfc0,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4460511808961813101, guid: 58df3d34af8fb8f4db8b419abab9dfc0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -41216,30 +41211,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6080123901604286826, guid: 58df3d34af8fb8f4db8b419abab9dfc0,
-        type: 3}
-      propertyPath: m_CullingMode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5177713270501351851, guid: 58df3d34af8fb8f4db8b419abab9dfc0,
         type: 3}
-      propertyPath: gritoMorte
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1522346267875246733, guid: 58df3d34af8fb8f4db8b419abab9dfc0,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7964227190390934083, guid: 58df3d34af8fb8f4db8b419abab9dfc0,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: -0.0076988935
-      objectReference: {fileID: 0}
-    - target: {fileID: 7964227190390934083, guid: 58df3d34af8fb8f4db8b419abab9dfc0,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 2.0784366
+      propertyPath: distancia
+      value: 0.47
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58df3d34af8fb8f4db8b419abab9dfc0, type: 3}

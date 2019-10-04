@@ -198,7 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerEnemy:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   verifica: {fileID: 458772499850103876}
   radiusAtack: 0.97
   distancia: 0.63
