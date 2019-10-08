@@ -121,6 +121,28 @@ public class MoveGhost : PhysicsObject
 
 
   }
-   
+  private void OnTriggerExit2D(Collider2D collision)
+  {
+
+        if (collision.gameObject.CompareTag("virar"))
+        {
+            if (player.seguir && Vector2.Distance(transform.position, target.position) <= distanciaMov)
+            {
+                if (player.flipar)
+                {
+                    spriteRenderer.flipX = false;
+                    transform.position = Vector2.MoveTowards(transform.position, target.position, _moveDir * Time.deltaTime);
+                }
+                else
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, target.position, _moveDir * Time.deltaTime);
+                    spriteRenderer.flipX = true;
+                }
+
+
+            }
+
+        }
+    }
 
 }

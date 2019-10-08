@@ -180,7 +180,7 @@ MonoBehaviour:
   _speed: 1
   _rayCastOffset: 0.5
   verifica: {fileID: 1430182283}
-  distanciaMov: 1.5
+  distanciaMov: 2.86
   _moveDir: 1
   target: {fileID: 0}
   myTransform: {fileID: 0}
@@ -202,7 +202,6 @@ MonoBehaviour:
   verifica: {fileID: 458772499850103876}
   radiusAtack: 0.97
   distancia: 0.63
-  Atacando: 1
   timeNextAtack: 1
   naoEmpurra: 0.55
   animator: {fileID: 0}

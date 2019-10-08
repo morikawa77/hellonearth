@@ -20,7 +20,9 @@ public class EnemyAngel : MonoBehaviour
   void Start()
   {
     animator = GetComponent<Animator>();
-    audioData = GetComponent<AudioSource>();
+    target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        player = GameObject.FindWithTag("Player").GetComponent<PlayerPlatformerController>();
+        audioData = GetComponent<AudioSource>();
   }
 
   // Update is called once per frame
@@ -33,11 +35,13 @@ public class EnemyAngel : MonoBehaviour
             animator.Play("Anjo-Attack");
 
             InimigoAtack();
+            audioData.Play(0);
 
         }
         else
         {
             animator.Play("Anjo-Idle");
+            audioData.Stop();
         }
   }
     //private void OnTriggerEnter2D(Collider2D collision)
@@ -62,7 +66,7 @@ public class EnemyAngel : MonoBehaviour
             {
 
                 Debug.Log(enimiesAttack[i].name);
-                timeNextAtack = 2f;
+                timeNextAtack = 3f;
                 InimigoAttackHandler();
             }
             else
@@ -98,6 +102,6 @@ public class EnemyAngel : MonoBehaviour
     public void InimigoAttackHandler()
     {
         Debug.Log("James recebeu ataque");
-        player.jamesDamaged(25);
+        player.jamesDamaged(50);
     }
 }

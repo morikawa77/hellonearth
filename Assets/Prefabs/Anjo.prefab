@@ -119,7 +119,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   verifica: {fileID: 8287510932716845529}
-  radiusAtack: 1.5
+  radiusAtack: 1.69
   distancia: 0.47
   timeNextAtack: 0.5
   naoEmpurra: 0.63
