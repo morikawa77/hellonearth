@@ -927,8 +927,8 @@ MonoBehaviour:
   yMargin: 1
   xSmooth: 3
   ySmooth: 3
-  maxXAndY: {x: 16.74, y: 0}
-  minXAndY: {x: 5.79, y: 3.25}
+  maxXAndY: {x: 19, y: 0}
+  minXAndY: {x: 3, y: 3.25}
 --- !u!1001 &546071439
 PrefabInstance:
   m_ObjectHideFlags: 0

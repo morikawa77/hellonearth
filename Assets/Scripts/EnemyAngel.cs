@@ -6,7 +6,6 @@ using UnityEngine;
 public class EnemyAngel : MonoBehaviour
 {
   Animator animator;
-  bool grito = false;
     public LayerMask layerEnemy;
     public Transform verifica;
     public float radiusAtack = 1.50f;
@@ -14,7 +13,8 @@ public class EnemyAngel : MonoBehaviour
     public float distancia;
     AudioSource audioData;
     public float timeNextAtack = 0.5f;
-    
+    public float naoEmpurra;
+
 
     PlayerPlatformerController player;
   void Start()
@@ -26,20 +26,32 @@ public class EnemyAngel : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-        
-  }
-  private void OnTriggerEnter2D(Collider2D collision)
-  {
-    if (collision.gameObject.CompareTag("Player"))
-    {
-      grito = true;
-      animator.SetBool("grito", grito);
-      InimigoAtack();
 
-      audioData.Play(0);
-      StartCoroutine(Tempo());
-    }
+        if (Vector2.Distance(transform.position, target.position) <= naoEmpurra)
+        {
+
+            animator.Play("Anjo-Attack");
+
+            InimigoAtack();
+
+        }
+        else
+        {
+            animator.Play("Anjo-Idle");
+        }
   }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player"))
+    //    {
+
+
+    //        InimigoAtack();
+
+    //        audioData.Play(0);
+            
+    //    }
+    //}
     void InimigoAtack()
     {
         Collider2D[] enimiesAttack = Physics2D.OverlapCircleAll(verifica.position, radiusAtack, layerEnemy);
@@ -60,16 +72,16 @@ public class EnemyAngel : MonoBehaviour
         }
     }
 
-    public IEnumerator Tempo()
-    {
-        yield return new WaitForSeconds(2f);
-        audioData.Stop();
-        animator.Play("Anjo-Idle");
+    //public IEnumerator Tempo()
+    //{
+    //    yield return new WaitForSeconds(2f);
+    //    audioData.Stop();
+    //    animator.Play("Anjo-Idle");
         
-        //Ataque();
+    //    //Ataque();
 
 
-    }
+    //}
     ////public EnemyAngel inimigo;
 
     //public void Ataque()

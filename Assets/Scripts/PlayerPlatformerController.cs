@@ -13,9 +13,10 @@ public class PlayerPlatformerController : PhysicsObject
   public Animator animator;
   public bool flipar = false;
   public bool seguir = false;
+    bool damaged = false;
 
-  // Health System
-  public Transform pfHealthBar;
+    // Health System
+    public Transform pfHealthBar;
 
   PlayerPlatformerController player;
 
@@ -32,6 +33,8 @@ public class PlayerPlatformerController : PhysicsObject
     move.x = Input.GetAxis("Horizontal");
 
     bool punch = Input.GetButtonDown("Fire1");
+
+    
 
 
     if (Input.GetButtonDown("Jump") && grounded)
@@ -50,7 +53,10 @@ public class PlayerPlatformerController : PhysicsObject
     {
       animator.Play("James-Punch");
     }
-
+    else if(punch && !grounded)
+    {
+       animator.Play("James-FlyingKick");
+    }
     bool flipSprite = (spriteRenderer.flipX ? (move.x > 0.01f) : (move.x < 0.01f));
 
     if (spriteRenderer.flipX)
@@ -113,11 +119,20 @@ public class PlayerPlatformerController : PhysicsObject
   public void jamesDamaged(int damage)
   {
     healthSystem.Damage(damage);
-    Debug.Log("Damaged: " + healthSystem.GetHealthPercent());
+       
+        damaged = true;
+        Debug.Log("Damaged: " + healthSystem.GetHealthPercent());
     if (healthSystem.GetHealthPercent() == 0)
     {
       Destroy(GameObject.FindGameObjectWithTag("Player"));
       SceneManager.LoadScene("GameOver");
     }
+
+        if (damaged == true)
+        {
+            animator.Play("James-Hurt");
+            damaged = false;
+        }
+        animator.Play("James-Idle");
   }
 }
