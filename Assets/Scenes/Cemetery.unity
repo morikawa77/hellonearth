@@ -13569,6 +13569,17 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1141865789}
+    - target: {fileID: 5001222958218117856, guid: 8988b6651e3659a4490d00a314d8a1f1,
+        type: 3}
+      propertyPath: pfHealthBar
+      value: 
+      objectReference: {fileID: 4090514546342678, guid: 01a6b42a1d84b664c890d8dcb066becd,
+        type: 3}
+    - target: {fileID: 5001222958218117856, guid: 8988b6651e3659a4490d00a314d8a1f1,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1637991659}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8988b6651e3659a4490d00a314d8a1f1, type: 3}
 --- !u!1 &650556851
@@ -13807,6 +13818,12 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1141865789}
+    - target: {fileID: 5001222958218117856, guid: 8988b6651e3659a4490d00a314d8a1f1,
+        type: 3}
+      propertyPath: pfHealthBar
+      value: 
+      objectReference: {fileID: 4090514546342678, guid: 01a6b42a1d84b664c890d8dcb066becd,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8988b6651e3659a4490d00a314d8a1f1, type: 3}
 --- !u!4 &693102178 stripped
@@ -13814,6 +13831,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4756865321800936223, guid: 8988b6651e3659a4490d00a314d8a1f1,
     type: 3}
   m_PrefabInstance: {fileID: 693102177}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &783589028 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8494217322036607809, guid: 8988b6651e3659a4490d00a314d8a1f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 4756865323085529425}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &875595822
 GameObject:
@@ -14615,6 +14638,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1637991659 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8494217322036607809, guid: 8988b6651e3659a4490d00a314d8a1f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 462245603}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1676666584
 GameObject:
   m_ObjectHideFlags: 0
@@ -15701,6 +15730,17 @@ PrefabInstance:
       propertyPath: layerEnemy.m_Bits
       value: 1024
       objectReference: {fileID: 0}
+    - target: {fileID: 5001222958218117856, guid: 8988b6651e3659a4490d00a314d8a1f1,
+        type: 3}
+      propertyPath: pfHealthBar
+      value: 
+      objectReference: {fileID: 4090514546342678, guid: 01a6b42a1d84b664c890d8dcb066becd,
+        type: 3}
+    - target: {fileID: 5001222958218117856, guid: 8988b6651e3659a4490d00a314d8a1f1,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 783589028}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8988b6651e3659a4490d00a314d8a1f1, type: 3}
 --- !u!4 &4756865323085529426 stripped
