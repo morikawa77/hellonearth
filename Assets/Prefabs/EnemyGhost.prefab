@@ -204,7 +204,7 @@ MonoBehaviour:
   distancia: 0.63
   timeNextAtack: 1
   naoEmpurra: 0.55
-  animator: {fileID: 0}
+  animator: {fileID: 8494217322036607809}
   pfHealthBar: {fileID: 4090514546342678, guid: 01a6b42a1d84b664c890d8dcb066becd,
     type: 3}
 --- !u!50 &4756865321800936218

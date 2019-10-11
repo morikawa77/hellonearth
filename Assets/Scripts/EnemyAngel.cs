@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class EnemyAngel : MonoBehaviour
 {
-  Animator animator;
+    Animator animator;
     public LayerMask layerEnemy;
     public Transform verifica;
     public float radiusAtack = 1.50f;
@@ -17,17 +17,17 @@ public class EnemyAngel : MonoBehaviour
 
 
     PlayerPlatformerController player;
-  void Start()
-  {
-    animator = GetComponent<Animator>();
-    target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         player = GameObject.FindWithTag("Player").GetComponent<PlayerPlatformerController>();
         audioData = GetComponent<AudioSource>();
-  }
+    }
 
-  // Update is called once per frame
-  void Update()
-  {
+    // Update is called once per frame
+    void Update()
+    {
 
         if (Vector2.Distance(transform.position, target.position) <= naoEmpurra)
         {
@@ -43,7 +43,7 @@ public class EnemyAngel : MonoBehaviour
             animator.Play("Anjo-Idle");
             audioData.Stop();
         }
-  }
+    }
     //private void OnTriggerEnter2D(Collider2D collision)
     //{
     //    if (collision.gameObject.CompareTag("Player"))
@@ -53,7 +53,7 @@ public class EnemyAngel : MonoBehaviour
     //        InimigoAtack();
 
     //        audioData.Play(0);
-            
+
     //    }
     //}
     void InimigoAtack()
@@ -81,7 +81,7 @@ public class EnemyAngel : MonoBehaviour
     //    yield return new WaitForSeconds(2f);
     //    audioData.Stop();
     //    animator.Play("Anjo-Idle");
-        
+
     //    //Ataque();
 
 

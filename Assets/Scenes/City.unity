@@ -203,6 +203,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyGhost (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4756865321800936219, guid: 8988b6651e3659a4490d00a314d8a1f1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4756865321800936223, guid: 8988b6651e3659a4490d00a314d8a1f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -429,12 +434,6 @@ Transform:
   m_Father: {fileID: 1278351929}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &252429585 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 8494217322036607809, guid: 8988b6651e3659a4490d00a314d8a1f1,
-    type: 3}
-  m_PrefabInstance: {fileID: 1972697379}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &259361850
 GameObject:
   m_ObjectHideFlags: 0
@@ -1897,6 +1896,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemyGhost (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756865321800936219, guid: 8988b6651e3659a4490d00a314d8a1f1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4756865321800936223, guid: 8988b6651e3659a4490d00a314d8a1f1,
         type: 3}
@@ -6064,17 +6068,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5001222958218117856, guid: 8988b6651e3659a4490d00a314d8a1f1,
-        type: 3}
-      propertyPath: pfHealthBar
-      value: 
-      objectReference: {fileID: 4090514546342678, guid: 01a6b42a1d84b664c890d8dcb066becd,
-        type: 3}
-    - target: {fileID: 5001222958218117856, guid: 8988b6651e3659a4490d00a314d8a1f1,
-        type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 252429585}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8988b6651e3659a4490d00a314d8a1f1, type: 3}
 --- !u!1 &1993724048
@@ -6847,6 +6840,16 @@ PrefabInstance:
     - target: {fileID: 2172803550817287420, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 701827244763499735, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1,
+        type: 3}
+      propertyPath: layerPlayer.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 701827244763499735, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1,
+        type: 3}
+      propertyPath: timeNextAtack
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
