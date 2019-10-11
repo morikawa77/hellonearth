@@ -16,9 +16,9 @@ public class PlayerPlatformerController : PhysicsObject
     private SpriteRenderer spriteRenderer;
     public Animator animator;
     public bool flipar = false;
+    public bool flipSoco = false;
     public bool seguir = false;
-    public float flip;
-    public float flip2;
+
     bool damaged = false;
 
     // Health System
@@ -69,7 +69,14 @@ public class PlayerPlatformerController : PhysicsObject
         else if (punch && !grounded)
         {
             animator.Play("James-FlyingKick");
-            VerificandoAt();
+            if (flipar)
+            {
+                VerificandoAt();
+            }
+            else
+            {
+                VerificandoAt1();
+            }
         }
 
         
