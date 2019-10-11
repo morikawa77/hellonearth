@@ -182,7 +182,7 @@ MonoBehaviour:
   verifica: {fileID: 1430182283}
   distanciaMov: 2.86
   _moveDir: 1
-  target: {fileID: 0}
+  target: {fileID: 2172803550817287420, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1, type: 3}
   myTransform: {fileID: 0}
 --- !u!114 &5001222958218117856
 MonoBehaviour:
@@ -205,7 +205,8 @@ MonoBehaviour:
   timeNextAtack: 1
   naoEmpurra: 0.55
   animator: {fileID: 8494217322036607809}
-  pfHealthBar: {fileID: 0}
+  pfHealthBar: {fileID: 4090514546342678, guid: 01a6b42a1d84b664c890d8dcb066becd,
+    type: 3}
 --- !u!50 &4756865321800936218
 Rigidbody2D:
   serializedVersion: 4
