@@ -18,7 +18,7 @@ public class PlayerPlatformerController : PhysicsObject
     public bool flipar = false;
     public bool flipSoco = false;
     public bool seguir = false;
-
+    HealthSystem healthSystem = new HealthSystem(100);
     bool damaged = false;
 
     // Health System
@@ -27,6 +27,28 @@ public class PlayerPlatformerController : PhysicsObject
     EnemyAttack enemy;
 
     PlayerPlatformerController player;
+    private void Start()
+    {
+        player = GameObject.FindWithTag("Player").GetComponent<PlayerPlatformerController>();
+        Vector3 pos = player.transform.position;
+        //Debug.Log(pos);
+
+        enemy = GameObject.FindWithTag("Enemy").GetComponent<EnemyAttack>();
+
+        Transform healthBarTransform = Instantiate(pfHealthBar, new Vector3(pos.x, pos.y + (float)0.5), Quaternion.identity);
+        HealthBar healthBar = healthBarTransform.GetComponent<HealthBar>();
+        healthBar.Setup(healthSystem);
+
+        healthBar.transform.parent = player.transform;
+
+        // testing healthBar
+        // Debug.Log("Health: " + healthSystem.GetHealthPercent());
+        // healthSystem.Damage(50);
+        // Debug.Log("Damaged: " + healthSystem.GetHealthPercent());
+        // healthSystem.Heal(30);
+        // Debug.Log("Healed: " + healthSystem.GetHealthPercent());
+
+    }
 
     void Awake()
     {
@@ -112,8 +134,9 @@ public class PlayerPlatformerController : PhysicsObject
     public void JamesAttackHandler()
     {
             Debug.Log("Inimigo recebeu ataque");
-            enemy?.enemyDamaged(25);             
+            enemy.enemyDamaged(25);             
     }
+    
 
     public void VerificandoAt()
     {
@@ -161,29 +184,8 @@ public class PlayerPlatformerController : PhysicsObject
         }
     }
 
-    HealthSystem healthSystem = new HealthSystem(100);
-    private void Start()
-    {
-        player = GameObject.FindWithTag("Player").GetComponent<PlayerPlatformerController>();
-        Vector3 pos = player.transform.position;
-        //Debug.Log(pos);
-
-        enemy = GameObject.FindWithTag("Enemy").GetComponent<EnemyAttack>();
-
-        Transform healthBarTransform = Instantiate(pfHealthBar, new Vector3(pos.x, pos.y + (float)0.5), Quaternion.identity);
-        HealthBar healthBar = healthBarTransform.GetComponent<HealthBar>();
-        healthBar.Setup(healthSystem);
-
-        healthBar.transform.parent = player.transform;
-
-        // testing healthBar
-        // Debug.Log("Health: " + healthSystem.GetHealthPercent());
-        // healthSystem.Damage(50);
-        // Debug.Log("Damaged: " + healthSystem.GetHealthPercent());
-        // healthSystem.Heal(30);
-        // Debug.Log("Healed: " + healthSystem.GetHealthPercent());
-
-    }
+    
+  
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
@@ -209,7 +211,11 @@ public class PlayerPlatformerController : PhysicsObject
             animator.Play("James-Hurt");
             damaged = false;
         }
-        animator.Play("James-Idle");
+        else
+        {
+            animator.Play("James-Idle");
+        }
+        
 
     }
 }

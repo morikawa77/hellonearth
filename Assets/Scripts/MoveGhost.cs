@@ -24,6 +24,7 @@ public class MoveGhost : PhysicsObject
         animator = FindClosestEnemy().GetComponent<Animator>();
         myTransform = FindClosestEnemy().GetComponent<Transform>();
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        
     }
 
     void Update()
