@@ -5,137 +5,143 @@ using UnityEngine.SceneManagement;
 
 public class EnemyAttack : HealthBar
 {
-    PlayerPlatformerController player;
+  PlayerPlatformerController player;
 
-    EnemyAttack enemy;
-    public LayerMask layerEnemy;
-    public Transform verifica;
-    public float radiusAtack = 1.50f;
-    private Transform target;
-    public float distancia;
-    public float timeNextAtack = 0.5f;
-    public float naoEmpurra;
-    SpriteRenderer spriteRenderer;
-    public Animator animator;
-    AudioSource audioData;
+  EnemyAttack enemy;
+  public LayerMask layerEnemy;
+  public Transform verifica;
+  public float radiusAtack = 1.50f;
+  private Transform target;
+  public float distancia;
+  public float timeNextAtack = 0.5f;
+  public float naoEmpurra;
+  SpriteRenderer spriteRenderer;
+  public Animator animator;
+  AudioSource audioData;
 
-    bool damaged = false;
+  bool damaged = false;
 
-    HealthSystem healthSystem = new HealthSystem(100);
+  HealthSystem healthSystem = new HealthSystem(100);
 
-    // Health System
-    public Transform pfHealthBar;
+  // Health System
+  public Transform pfHealthBar;
 
-    void Start()
+  void Start()
+  {
+    player = GameObject.FindWithTag("Player").GetComponent<PlayerPlatformerController>();
+    target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+    spriteRenderer = GetComponent<SpriteRenderer>();
+    animator = GetComponent<Animator>();
+    audioData = GetComponent<AudioSource>();
+
+    // health system
+    GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+    foreach (GameObject enemy in enemies)
     {
-        player = GameObject.FindWithTag("Player").GetComponent<PlayerPlatformerController>();
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        animator = GetComponent<Animator>();
-        audioData = GetComponent<AudioSource>();
+      Vector3 pos = enemy.transform.position;
+      // Debug.Log(pos);
+      Transform healthBarTransform = Instantiate(pfHealthBar, new Vector3(pos.x, pos.y + (float)0.5), Quaternion.identity);
+      HealthBar healthBar = healthBarTransform.GetComponent<HealthBar>();
+      healthBar.Setup(healthSystem);
 
-        // health system
-        enemy = GameObject.FindWithTag("Enemy").GetComponent<EnemyAttack>();
-        Vector3 pos = enemy.transform.position;
-        // Debug.Log(pos);
-        Transform healthBarTransform = Instantiate(pfHealthBar, new Vector3(pos.x, pos.y + (float)0.5), Quaternion.identity);
-        HealthBar healthBar = healthBarTransform.GetComponent<HealthBar>();
-        healthBar.Setup(healthSystem);
+      healthBar.transform.parent = enemy.transform;
 
-        healthBar.transform.parent = enemy.transform;
-
-        // testing healthBar
-        // Debug.Log("Health: " + healthSystem.GetHealthPercent());
-        // healthSystem.Damage(50);
-        // Debug.Log("Damaged: " + healthSystem.GetHealthPercent());
-        // healthSystem.Heal(30);
-        // Debug.Log("Healed: " + healthSystem.GetHealthPercent());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-        if (Vector2.Distance(transform.position, target.position) <= naoEmpurra)
-        {
-
-            if (player.flipar)
-            {
-
-                spriteRenderer.flipX = false;
-                animator.Play("Ghost-Attack");
-
-                InimigoAtack();
-            }
-            else if (player.flipar == false)
-            {
-                spriteRenderer.flipX = true;
-                animator.Play("Ghost-Attack");
-
-                InimigoAtack();
-            }
-
-        }
-        else
-        {
-            animator.Play("Ghost");
-        }
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(verifica.position, radiusAtack);
-    }
-
-    void InimigoAtack()
-    {
-        Collider2D[] enimiesAttack = Physics2D.OverlapCircleAll(verifica.position, radiusAtack, layerEnemy);
-        for (int i = 0; i < enimiesAttack.Length; i++)
-        {
-
-            if (timeNextAtack <= 0)
-            {
-                Debug.Log(enimiesAttack[i].name);
-                timeNextAtack = 2f;
-                InimigoAttackHandler();
-            }
-            else
-            {
-                timeNextAtack -= Time.deltaTime;
-            }
-        }
-    }
-
-    public void InimigoAttackHandler()
-    {
-        Debug.Log("James recebeu ataque");
-        player.jamesDamaged(25);
+      // testing healthBar
+      // Debug.Log("Health: " + healthSystem.GetHealthPercent());
+      // healthSystem.Damage(50);
+      // Debug.Log("Damaged: " + healthSystem.GetHealthPercent());
+      // healthSystem.Heal(30);
+      // Debug.Log("Healed: " + healthSystem.GetHealthPercent());
     }
 
 
-    public void enemyDamaged(int damage)
+  }
+
+  // Update is called once per frame
+  void Update()
+  {
+
+    if (Vector2.Distance(transform.position, target.position) <= naoEmpurra)
     {
 
+      if (player.flipar)
+      {
 
-        healthSystem.Damage(damage);
+        spriteRenderer.flipX = false;
+        animator.Play("Ghost-Attack");
 
-        damaged = true;
-        Debug.Log("Damaged: " + healthSystem.GetHealthPercent());
-        if (healthSystem.GetHealthPercent() == 0)
-        {
-            Destroy(gameObject);
-            audioData.Stop();
-            //Destroy(GameObject.FindGameObjectWithTag("Player"));
-            //SceneManager.LoadScene("GameOver");
-        }
+        InimigoAtack();
+      }
+      else if (player.flipar == false)
+      {
+        spriteRenderer.flipX = true;
+        animator.Play("Ghost-Attack");
 
-        //if (damaged == true)
-        //{
-        //    animator.Play("James-Hurt");
-        //    damaged = false;
-        //}
-        //animator.Play("James-Idle");
+        InimigoAtack();
+      }
 
     }
+    else
+    {
+      animator.Play("Ghost");
+    }
+  }
+
+  private void OnDrawGizmosSelected()
+  {
+    Gizmos.color = Color.red;
+    Gizmos.DrawWireSphere(verifica.position, radiusAtack);
+  }
+
+  void InimigoAtack()
+  {
+    Collider2D[] enimiesAttack = Physics2D.OverlapCircleAll(verifica.position, radiusAtack, layerEnemy);
+    for (int i = 0; i < enimiesAttack.Length; i++)
+    {
+
+      if (timeNextAtack <= 0)
+      {
+        Debug.Log(enimiesAttack[i].name);
+        timeNextAtack = 2f;
+        InimigoAttackHandler();
+      }
+      else
+      {
+        timeNextAtack -= Time.deltaTime;
+      }
+    }
+  }
+
+  public void InimigoAttackHandler()
+  {
+    Debug.Log("James recebeu ataque");
+    player.jamesDamaged(25);
+  }
+
+
+  public void enemyDamaged(int damage)
+  {
+
+
+    healthSystem.Damage(damage);
+
+    damaged = true;
+    Debug.Log("Damaged: " + healthSystem.GetHealthPercent());
+    if (healthSystem.GetHealthPercent() == 0)
+    {
+      Destroy(gameObject);
+      audioData.Stop();
+      //Destroy(GameObject.FindGameObjectWithTag("Player"));
+      //SceneManager.LoadScene("GameOver");
+    }
+
+    //if (damaged == true)
+    //{
+    //    animator.Play("James-Hurt");
+    //    damaged = false;
+    //}
+    //animator.Play("James-Idle");
+
+  }
 }

@@ -41229,11 +41229,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5360958548796795002, guid: 58df3d34af8fb8f4db8b419abab9dfc0,
-        type: 3}
-      propertyPath: MaxDistance
-      value: 1.01
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58df3d34af8fb8f4db8b419abab9dfc0, type: 3}
 --- !u!1 &997632969
@@ -41851,11 +41846,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2062327608472060401, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1,
-        type: 3}
-      propertyPath: m_Name
-      value: James
-      objectReference: {fileID: 0}
     - target: {fileID: 2172803550817287420, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -41926,6 +41916,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.5919021
       objectReference: {fileID: 0}
+    - target: {fileID: 2062327608472060401, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1,
+        type: 3}
+      propertyPath: m_Name
+      value: James
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440493712288690178, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 701827244763499735, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1,
         type: 3}
       propertyPath: maxSpeed
@@ -41942,11 +41942,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4090514546342678, guid: 01a6b42a1d84b664c890d8dcb066becd,
         type: 3}
-    - target: {fileID: 3440493712288690178, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1,
-        type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1, type: 3}
 --- !u!1 &1533314968
@@ -42363,36 +42358,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5177713270501351851, guid: 58df3d34af8fb8f4db8b419abab9dfc0,
-        type: 3}
-      propertyPath: gritoMorte
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6997701010876137597, guid: 58df3d34af8fb8f4db8b419abab9dfc0,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6080123901604286826, guid: 58df3d34af8fb8f4db8b419abab9dfc0,
-        type: 3}
-      propertyPath: m_CullingMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1522346267875246733, guid: 58df3d34af8fb8f4db8b419abab9dfc0,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7964227190390934083, guid: 58df3d34af8fb8f4db8b419abab9dfc0,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: -0.0076988935
-      objectReference: {fileID: 0}
-    - target: {fileID: 7964227190390934083, guid: 58df3d34af8fb8f4db8b419abab9dfc0,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 2.0784366
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58df3d34af8fb8f4db8b419abab9dfc0, type: 3}
