@@ -102,6 +102,6 @@ public class EnemyAngel : MonoBehaviour
     public void InimigoAttackHandler()
     {
         Debug.Log("James recebeu ataque");
-        player.jamesDamaged(50);
+        player.jamesDamaged(25);
     }
 }

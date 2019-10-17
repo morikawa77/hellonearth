@@ -20,7 +20,9 @@ public class PlayerPlatformerController : PhysicsObject
     public bool seguir = false;
     HealthSystem healthSystem = new HealthSystem(100);
     bool damaged = false;
-
+    //public AudioClip jump;
+    //public AudioClip punchs;
+    //public AudioClip walk;
     // Health System
     public Transform pfHealthBar;
 
@@ -61,6 +63,7 @@ public class PlayerPlatformerController : PhysicsObject
         Vector2 move = Vector2.zero;
 
         move.x = Input.GetAxis("Horizontal");
+        
 
         bool punch = Input.GetButtonDown("Fire1");
 
@@ -78,6 +81,7 @@ public class PlayerPlatformerController : PhysicsObject
 
         if (punch && grounded)
         {
+            //Gerenciador.instancia.PlayAudio(punchs);
             animator.Play("James-Punch");
             if (flipar)
             {
