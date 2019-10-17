@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerPlatformerController : PhysicsObject
 {
 
+<<<<<<< HEAD
   public float maxSpeed = 3;
   public float jumpTakeOffSpeed = 7;
   public Transform verifica;
@@ -65,6 +66,32 @@ public class PlayerPlatformerController : PhysicsObject
     bool punch = Input.GetButtonDown("Fire1");
 
     if (Input.GetButtonDown("Jump") && grounded)
+=======
+    public float maxSpeed = 3;
+    public float jumpTakeOffSpeed = 7;
+    public Transform verifica;
+    public Transform verifica1;
+    public LayerMask layerPlayer;
+    public float radiusAtack = 1.50f;
+    public float timeNextAtack = 0.5f;
+    private SpriteRenderer spriteRenderer;
+    public Animator animator;
+    public bool flipar = false;
+    public bool flipSoco = false;
+    public bool seguir = false;
+    HealthSystem healthSystem = new HealthSystem(100);
+    bool damaged = false;
+    //public AudioClip jump;
+    //public AudioClip punchs;
+    //public AudioClip walk;
+    // Health System
+    public Transform pfHealthBar;
+
+    EnemyAttack enemy;
+
+    PlayerPlatformerController player;
+    private void Start()
+>>>>>>> fb006da008d9b7665870d6d0d2585ffc07239ea1
     {
       velocity.y = jumpTakeOffSpeed;
     }
@@ -117,7 +144,83 @@ public class PlayerPlatformerController : PhysicsObject
 
     if (move.x < 0)
     {
+<<<<<<< HEAD
       spriteRenderer.flipX = true;
+=======
+        Vector2 move = Vector2.zero;
+
+        move.x = Input.GetAxis("Horizontal");
+        
+
+        bool punch = Input.GetButtonDown("Fire1");
+
+        if (Input.GetButtonDown("Jump") && grounded)
+        {
+            velocity.y = jumpTakeOffSpeed;
+        }
+        else if (Input.GetButtonUp("Jump"))
+        {
+            if (velocity.y > 0)
+            {
+                velocity.y = velocity.y * 0.5f;
+            }
+        }
+
+        if (punch && grounded)
+        {
+            //Gerenciador.instancia.PlayAudio(punchs);
+            animator.Play("James-Punch");
+            if (flipar)
+            {
+                VerificandoAt();
+            }
+            else
+            {
+                VerificandoAt1();
+            }
+        }
+        else if (punch && !grounded)
+        {
+            animator.Play("James-FlyingKick");
+            if (flipar)
+            {
+                VerificandoAt();
+            }
+            else
+            {
+                VerificandoAt1();
+            }
+        }
+
+        
+
+        bool flipSprite = (spriteRenderer.flipX ? (move.x > 0.01f) : (move.x < 0.01f));
+
+        if (spriteRenderer.flipX)
+        {
+            flipar = true;
+        }
+        else
+        {
+            flipar = false;
+        }
+
+
+        if (move.x < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else if (move.x > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+
+        animator.SetBool("grounded", grounded);
+        animator.SetFloat("Speed", Mathf.Abs(velocity.x) / maxSpeed);
+        animator.SetBool("punch", punch);
+
+        targetVelocity = move * maxSpeed;
+>>>>>>> fb006da008d9b7665870d6d0d2585ffc07239ea1
     }
     else if (move.x > 0)
     {
