@@ -60,7 +60,7 @@ Transform:
   m_GameObject: {fileID: 2062327608472060401}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.45, y: -3.45, z: 0}
-  m_LocalScale: {x: 2.289155, y: 2.289155, z: 2.289155}
+  m_LocalScale: {x: 1.591902, y: 1.591902, z: 1.591902}
   m_Children:
   - {fileID: 3264801892466800802}
   - {fileID: 1638761075}
@@ -149,8 +149,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minGroundNormalY: 0.65
-  gravityModifier: 1.5
-  maxSpeed: 5
+  gravityModifier: 1
+  maxSpeed: 3
   jumpTakeOffSpeed: 10
   verifica: {fileID: 3264801892466800802}
   verifica1: {fileID: 1638761075}

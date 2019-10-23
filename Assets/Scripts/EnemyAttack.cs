@@ -128,20 +128,20 @@ public class EnemyAttack : HealthBar
 
     damaged = true;
     Debug.Log("Damaged: " + healthSystem.GetHealthPercent());
-    if (healthSystem.GetHealthPercent() == 0)
-    {
-      Destroy(gameObject);
-      audioData.Stop();
-      //Destroy(GameObject.FindGameObjectWithTag("Player"));
-      //SceneManager.LoadScene("GameOver");
+        if (healthSystem.GetHealthPercent() == 0)
+        {
+            Destroy(gameObject);
+            audioData.Stop();
+            //Destroy(GameObject.FindGameObjectWithTag("Player"));
+            //SceneManager.LoadScene("GameOver");
+        }
+
+        //if (damaged == true)
+        //{
+        //    animator.Play("James-Hurt");
+        //    damaged = false;
+        //}
+        //animator.Play("James-Idle");
+
     }
-
-    //if (damaged == true)
-    //{
-    //    animator.Play("James-Hurt");
-    //    damaged = false;
-    //}
-    //animator.Play("James-Idle");
-
-  }
 }
