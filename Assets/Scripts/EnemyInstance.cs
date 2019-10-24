@@ -6,17 +6,17 @@ using UnityEngine.SceneManagement;
 public class EnemyInstance : MonoBehaviour
 {
     public GameObject myPrefab;
-    // public GameObject flameHead;
+    public GameObject flameHead;
     public GameObject angel;
     public GameObject james;
-    void Start()
+    void Awake()
     {
         if (SceneManager.GetActiveScene().name == "City")
         {
             Instantiate(james, new Vector3(-9.16f, -3.73f, 0f), Quaternion.identity);
-            Instantiate(myPrefab, new Vector3(3f, -3.451712f, 0.0625f), Quaternion.identity);
-            Instantiate(myPrefab, new Vector3(19f, -3.451712f, 0.0625f), Quaternion.identity);
-            Instantiate(myPrefab, new Vector3(27f, -3.451712f, 0.0625f), Quaternion.identity);
+            Instantiate(flameHead, new Vector3(3f, -3.451712f, 0.0625f), Quaternion.identity);
+            Instantiate(flameHead, new Vector3(19f, -3.451712f, 0.0625f), Quaternion.identity);
+            Instantiate(flameHead, new Vector3(27f, -3.451712f, 0.0625f), Quaternion.identity);
         }
         if (SceneManager.GetActiveScene().name == "Cemetery")
         {

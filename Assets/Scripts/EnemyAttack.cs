@@ -18,6 +18,7 @@ public class EnemyAttack : HealthBar
   SpriteRenderer spriteRenderer;
   public Animator animator;
   AudioSource audioData;
+  int vidainimigo = 4;
 
   bool damaged = false;
 
@@ -33,6 +34,7 @@ public class EnemyAttack : HealthBar
     spriteRenderer = GetComponent<SpriteRenderer>();
     animator = GetComponent<Animator>();
     audioData = GetComponent<AudioSource>();
+
 
     // health system
     GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -130,8 +132,13 @@ public class EnemyAttack : HealthBar
     Debug.Log("Damaged: " + healthSystem.GetHealthPercent());
         if (healthSystem.GetHealthPercent() == 0)
         {
-            Destroy(gameObject);
-            audioData.Stop();
+            if (vidainimigo == 0)
+            {
+                Destroy(gameObject);
+                audioData.Stop();
+            }
+            //Destroy(gameObject);
+            //audioData.Stop();
             //Destroy(GameObject.FindGameObjectWithTag("Player"));
             //SceneManager.LoadScene("GameOver");
         }

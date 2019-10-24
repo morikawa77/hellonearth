@@ -63,7 +63,6 @@ public class PlayerPlatformerController : PhysicsObject
         Vector2 move = Vector2.zero;
 
         move.x = Input.GetAxis("Horizontal");
-        
 
         bool punch = Input.GetButtonDown("Fire1");
 
