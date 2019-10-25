@@ -856,7 +856,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hell Of Earth
+  m_Text: Hell on Earth
 --- !u!222 &1095652177
 CanvasRenderer:
   m_ObjectHideFlags: 0
