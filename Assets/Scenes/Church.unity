@@ -561,7 +561,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -41814,6 +41814,12 @@ PrefabInstance:
       propertyPath: james
       value: 
       objectReference: {fileID: 2062327608472060401, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1,
+        type: 3}
+    - target: {fileID: 1397506291411823314, guid: 074b609b8a44bf540ba32bd233b5f915,
+        type: 3}
+      propertyPath: flameHead
+      value: 
+      objectReference: {fileID: 2520757411276236278, guid: c494ab155b17055499eb2c65e51b1522,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 074b609b8a44bf540ba32bd233b5f915, type: 3}

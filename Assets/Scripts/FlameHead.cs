@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class FlameHead : MonoBehaviour
 {
+    FlameHead enemy;
+    public LayerMask layerEnemy;
+    public Transform verifica;
+    public float radiusAtack = 1.50f;
     private bool colide = false;
     public float speed = -2;
     Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
     PlayerPlatformerController player;
+    public float timeNextAtack = 0.5f;
     Animator animator;
+    private Transform target;
+    public float naoEmpurra;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,66 +24,87 @@ public class FlameHead : MonoBehaviour
           spriteRenderer = GetComponent<SpriteRenderer>();
           player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPlatformerController>();
           animator = GetComponent<Animator>();
-          
+          target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        rb.velocity = new Vector2(speed, rb.velocity.y);
+        if (colide)
+        {
+            flip();
+        }
+
+        if (Vector2.Distance(transform.position, target.position) <= naoEmpurra)
+        {
+
+            if (player.flipar)
+            {
+
+                spriteRenderer.flipX = true;
+                animator.Play("Enemy-Attack");
+
+                InimigoAtack();
+            }
+            else if (player.flipar == false)
+            {
+                spriteRenderer.flipX = false;
+                animator.Play("Enemy-Attack");
+
+                InimigoAtack();
+            }
+
+        }
+        else
+        {
+            animator.Play("Enemy");
+        }
+    }
+    private void flip()
+    {
+        speed *= -1;
+        spriteRenderer.flipX = !spriteRenderer.flipX;
+        colide = false;
+
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("virar"))
+        {
+            colide = true;
+        }
     }
 
-    //private void OnDrawGizmosSelected()
-    //{
-    //    Gizmos.color = Color.red;
-    //    Gizmos.DrawWireSphere(verifica.position, distanciaMov);
-    //}
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(verifica.position, radiusAtack);
+    }
+    void InimigoAtack()
+    {
+        Collider2D[] enimiesAttack = Physics2D.OverlapCircleAll(verifica.position, radiusAtack, layerEnemy);
+        for (int i = 0; i < enimiesAttack.Length; i++)
+        {
 
-    //void TurnLeft()
-    //{
-    //    //sets the movement direction to -1 to make the gameObject move left
-    //    _moveDir = -1;
-    //    spriteRenderer.flipX = true;
-    //}
+            if (timeNextAtack <= 0)
+            {
+                Debug.Log(enimiesAttack[i].name);
+                timeNextAtack = 0.5f;
+                InimigoAttackHandler();
+            }
+            else
+            {
+                timeNextAtack -= Time.deltaTime;
+            }
+        }
+    }
 
-    //void TurnRight()
-    //{
-    //    //sets the movement direction to 1 to make the gameObject move right
-    //    _moveDir = 1;
-    //    spriteRenderer.flipX = false;
-    //}
+    public void InimigoAttackHandler()
+    {
+        Debug.Log("James recebeu ataque");
+        player.jamesDamaged(25);
+    }
 
-    //public void Move()
-    //{
-    //    //Setting up the start position of both raycasts
-    //    Vector2 rayCastOriginRight = transform.position + new Vector3(_rayCastOffset, 0, 0);
-    //    //Only difference is that we flip the rayCastOffset because we want it to point towards the left, therefore the "-" in front
-    //    Vector2 rayCastOriginLeft = transform.position + new Vector3(-_rayCastOffset, 0, 0);
-
-    //    //Moves the Gameobject every frame based on the _moveDir variable;
-    //    //transform.Translate(new Vector2(_moveDir * _speed * Time.deltaTime, 0));
-    //    transform.Translate(new Vector2(_moveDir * _speed * Time.deltaTime, 0));
-
-
-    //}
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-
-    //    if (collision.gameObject.CompareTag("virar"))
-    //    {
-
-
-    //        if (_moveDir == 1)
-    //        {
-    //            TurnLeft();
-    //        }
-    //        else if (_moveDir == -1)
-    //        {
-    //            TurnRight();
-    //        }
-    //    }
-
-
-    //}
 }

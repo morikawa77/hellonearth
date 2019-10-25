@@ -15,6 +15,7 @@ public class EnemyInstance : MonoBehaviour
         {
             Instantiate(james, new Vector3(-9.16f, -3.73f, 0f), Quaternion.identity);
             Instantiate(flameHead, new Vector3(3f, -3.451712f, 0.0625f), Quaternion.identity);
+            Instantiate(flameHead, new Vector3(8f, -3.451712f, 0.0625f), Quaternion.identity);
             Instantiate(flameHead, new Vector3(19f, -3.451712f, 0.0625f), Quaternion.identity);
             Instantiate(flameHead, new Vector3(27f, -3.451712f, 0.0625f), Quaternion.identity);
         }

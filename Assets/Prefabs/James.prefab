@@ -42,8 +42,8 @@ GameObject:
   - component: {fileID: 3440493712288690178}
   - component: {fileID: 5754495466115843837}
   - component: {fileID: 701827244763499735}
-  - component: {fileID: 8991025120291833073}
   - component: {fileID: 637743844}
+  - component: {fileID: 3508870777478424015}
   m_Layer: 9
   m_Name: James
   m_TagString: Player
@@ -165,22 +165,6 @@ MonoBehaviour:
   seguir: 0
   pfHealthBar: {fileID: 4090514546342678, guid: 01a6b42a1d84b664c890d8dcb066becd,
     type: 3}
---- !u!70 &8991025120291833073
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2062327608472060401}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0058327625, y: -0.05970184}
-  m_Size: {x: 0.23522659, y: 0.44020003}
-  m_Direction: 0
 --- !u!95 &637743844
 Animator:
   serializedVersion: 3
@@ -200,6 +184,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &3508870777478424015
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062327608472060401}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.005905494, y: -0.07795203}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.82, y: 0.6}
+    newSize: {x: 0.82, y: 0.6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.20819354, y: 0.44409597}
+  m_EdgeRadius: 0
 --- !u!1 &3150855503006453095
 GameObject:
   m_ObjectHideFlags: 0
