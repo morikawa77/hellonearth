@@ -119,10 +119,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   verifica: {fileID: 8287510932716845529}
-  radiusAtack: 1.69
-  distancia: 0.47
+  radiusAtack: 2.5
+  distancia: 1
   timeNextAtack: 0.5
-  naoEmpurra: 0.63
+  naoEmpurra: 1
 --- !u!60 &2162714665700993297
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -216,14 +216,14 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 1.01
+  MinDistance: 1.01
+  MaxDistance: 1.9265777
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
