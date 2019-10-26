@@ -43,6 +43,7 @@ public class FlameHead : MonoBehaviour
             if (player.flipar)
             {
 
+
                 spriteRenderer.flipX = true;
                 animator.Play("Enemy-Attack");
 
@@ -50,6 +51,8 @@ public class FlameHead : MonoBehaviour
             }
             else if (player.flipar == false)
             {
+
+
                 spriteRenderer.flipX = false;
                 animator.Play("Enemy-Attack");
 

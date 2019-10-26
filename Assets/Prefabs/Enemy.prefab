@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2520757411276236274}
   - component: {fileID: 2520757411276236279}
   - component: {fileID: 9104533595787141973}
-  - component: {fileID: 2122112021584485339}
   - component: {fileID: 1081764064922078475}
+  - component: {fileID: 8220404189284407050}
   m_Layer: 10
   m_Name: Enemy
   m_TagString: Enemy
@@ -141,7 +141,27 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0057665394, y: -0.096584454}
   m_Size: {x: 0.12599981, y: 0.39529845}
   m_Direction: 0
---- !u!82 &2122112021584485339
+--- !u!114 &1081764064922078475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2520757411276236278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c1f543f430f24448903341323edb67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerEnemy:
+    serializedVersion: 2
+    m_Bits: 1024
+  verifica: {fileID: 26676703362746356}
+  radiusAtack: 1
+  speed: 2
+  timeNextAtack: 0.5
+  naoEmpurra: 1
+--- !u!82 &8220404189284407050
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -153,7 +173,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 21c0646e1ab0b5842b0cce39507c8bd7, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.681
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -161,10 +181,10 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.81420994
-  MaxDistance: 0.987376
+  MinDistance: 0.5
+  MaxDistance: 1.01
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -237,26 +257,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1081764064922078475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2520757411276236278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52c1f543f430f24448903341323edb67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layerEnemy:
-    serializedVersion: 2
-    m_Bits: 1024
-  verifica: {fileID: 26676703362746356}
-  radiusAtack: 1
-  speed: 2
-  timeNextAtack: 0.5
-  naoEmpurra: 1
 --- !u!1 &3434704293581073697
 GameObject:
   m_ObjectHideFlags: 0
