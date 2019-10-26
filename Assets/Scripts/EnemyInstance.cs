@@ -9,6 +9,7 @@ public class EnemyInstance : MonoBehaviour
     public GameObject flameHead;
     public GameObject angel;
     public GameObject james;
+    //public GameObject james;
     void Awake()
     {
         if (SceneManager.GetActiveScene().name == "City")
@@ -32,6 +33,12 @@ public class EnemyInstance : MonoBehaviour
             Instantiate(angel, new Vector3(0.02f, -2.29f, 0f), Quaternion.identity);
             Instantiate(angel, new Vector3(13.99f, -1.21f, 0f), Quaternion.identity);
             Instantiate(angel, new Vector3(27.05f, -2.25f, 0f), Quaternion.identity);
+        }
+        if (SceneManager.GetActiveScene().name == "Boss Final")
+        {
+            Instantiate(james, new Vector3(-5.61f, -4.03f, 0f), Quaternion.identity);
+            Instantiate(myPrefab, new Vector3(-7.61f, -4.03f, 0f), Quaternion.identity);
+
         }
 
     }

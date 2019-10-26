@@ -335,6 +335,93 @@ Transform:
   m_Father: {fileID: 2123773594}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &631521991
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1397506291411823317, guid: 074b609b8a44bf540ba32bd233b5f915,
+        type: 3}
+      propertyPath: m_Name
+      value: Instacia Inimigo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397506291411823315, guid: 074b609b8a44bf540ba32bd233b5f915,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397506291411823315, guid: 074b609b8a44bf540ba32bd233b5f915,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397506291411823315, guid: 074b609b8a44bf540ba32bd233b5f915,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397506291411823315, guid: 074b609b8a44bf540ba32bd233b5f915,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397506291411823315, guid: 074b609b8a44bf540ba32bd233b5f915,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397506291411823315, guid: 074b609b8a44bf540ba32bd233b5f915,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397506291411823315, guid: 074b609b8a44bf540ba32bd233b5f915,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397506291411823315, guid: 074b609b8a44bf540ba32bd233b5f915,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397506291411823315, guid: 074b609b8a44bf540ba32bd233b5f915,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397506291411823315, guid: 074b609b8a44bf540ba32bd233b5f915,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397506291411823315, guid: 074b609b8a44bf540ba32bd233b5f915,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397506291411823314, guid: 074b609b8a44bf540ba32bd233b5f915,
+        type: 3}
+      propertyPath: flameHead
+      value: 
+      objectReference: {fileID: 2520757411276236278, guid: c494ab155b17055499eb2c65e51b1522,
+        type: 3}
+    - target: {fileID: 1397506291411823314, guid: 074b609b8a44bf540ba32bd233b5f915,
+        type: 3}
+      propertyPath: james
+      value: 
+      objectReference: {fileID: 2062327608472060401, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1,
+        type: 3}
+    - target: {fileID: 1397506291411823314, guid: 074b609b8a44bf540ba32bd233b5f915,
+        type: 3}
+      propertyPath: angel
+      value: 
+      objectReference: {fileID: 999039323104042436, guid: 58df3d34af8fb8f4db8b419abab9dfc0,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 074b609b8a44bf540ba32bd233b5f915, type: 3}
 --- !u!1 &778294189
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,6 +972,7 @@ GameObject:
   - component: {fileID: 2007097603}
   - component: {fileID: 2007097605}
   - component: {fileID: 2007097604}
+  - component: {fileID: 2007097606}
   m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
@@ -1106,6 +1194,20 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &2007097606
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007097602}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
 --- !u!1 &2123773593
 GameObject:
   m_ObjectHideFlags: 0
