@@ -18,7 +18,6 @@ public class EnemyAttack : HealthBar
   SpriteRenderer spriteRenderer;
   public Animator animator;
   AudioSource audioData;
-  int vidainimigo = 4;
 
   bool damaged = false;
 
@@ -39,22 +38,32 @@ public class EnemyAttack : HealthBar
     // health system
     GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-    foreach (GameObject enemy in enemies)
+    // foreach (GameObject enemy in enemies)
+    // {
+    //   Vector3 pos = enemy.transform.position;
+    //   // Debug.Log(pos);
+    //   Transform healthBarTransform = Instantiate(pfHealthBar, new Vector3(pos.x, pos.y + (float)0.5), Quaternion.identity);
+    //   HealthBar healthBar = healthBarTransform.GetComponent<HealthBar>();
+    //   healthBar.Setup(healthSystem);
+
+    //   healthBar.transform.parent = enemy.transform;
+
+    //   // testing healthBar
+    //   // Debug.Log("Health: " + healthSystem.GetHealthPercent());
+    //   // healthSystem.Damage(50);
+    //   // Debug.Log("Damaged: " + healthSystem.GetHealthPercent());
+    //   // healthSystem.Heal(30);
+    //   // Debug.Log("Healed: " + healthSystem.GetHealthPercent());
+    // }
+
+    for (int i = 0; i < enemies.Length; i++)
     {
-      Vector3 pos = enemy.transform.position;
-      // Debug.Log(pos);
+      Vector3 pos = enemies[i].transform.position;
       Transform healthBarTransform = Instantiate(pfHealthBar, new Vector3(pos.x, pos.y + (float)0.5), Quaternion.identity);
       HealthBar healthBar = healthBarTransform.GetComponent<HealthBar>();
       healthBar.Setup(healthSystem);
 
-      healthBar.transform.parent = enemy.transform;
-
-      // testing healthBar
-      // Debug.Log("Health: " + healthSystem.GetHealthPercent());
-      // healthSystem.Damage(50);
-      // Debug.Log("Damaged: " + healthSystem.GetHealthPercent());
-      // healthSystem.Heal(30);
-      // Debug.Log("Healed: " + healthSystem.GetHealthPercent());
+      healthBar.transform.parent = enemies[i].transform;
     }
 
 
@@ -130,25 +139,22 @@ public class EnemyAttack : HealthBar
 
     damaged = true;
     Debug.Log("Damaged: " + healthSystem.GetHealthPercent());
-        if (healthSystem.GetHealthPercent() == 0)
-        {
-            if (vidainimigo == 0)
-            {
-                Destroy(gameObject);
-                audioData.Stop();
-            }
-            //Destroy(gameObject);
-            //audioData.Stop();
-            //Destroy(GameObject.FindGameObjectWithTag("Player"));
-            //SceneManager.LoadScene("GameOver");
-        }
-
-        //if (damaged == true)
-        //{
-        //    animator.Play("James-Hurt");
-        //    damaged = false;
-        //}
-        //animator.Play("James-Idle");
-
+    if (healthSystem.GetHealthPercent() == 0)
+    {
+      Destroy(enemy);
+      audioData.Stop();
+      //Destroy(gameObject);
+      //audioData.Stop();
+      //Destroy(GameObject.FindGameObjectWithTag("Player"));
+      //SceneManager.LoadScene("GameOver");
     }
+
+    //if (damaged == true)
+    //{
+    //    animator.Play("James-Hurt");
+    //    damaged = false;
+    //}
+    //animator.Play("James-Idle");
+
+  }
 }
