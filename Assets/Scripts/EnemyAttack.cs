@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EnemyAttack : HealthBar
+public class EnemyAttack : MonoBehaviour
 {
   PlayerPlatformerController player;
 
@@ -26,6 +26,8 @@ public class EnemyAttack : HealthBar
   // Health System
   public Transform pfHealthBar;
 
+    public HealthBar hb;
+
   void Start()
   {
     player = GameObject.FindWithTag("Player").GetComponent<PlayerPlatformerController>();
@@ -38,36 +40,39 @@ public class EnemyAttack : HealthBar
     // health system
     GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-    // foreach (GameObject enemy in enemies)
-    // {
-    //   Vector3 pos = enemy.transform.position;
-    //   // Debug.Log(pos);
-    //   Transform healthBarTransform = Instantiate(pfHealthBar, new Vector3(pos.x, pos.y + (float)0.5), Quaternion.identity);
-    //   HealthBar healthBar = healthBarTransform.GetComponent<HealthBar>();
-    //   healthBar.Setup(healthSystem);
+        // foreach (GameObject enemy in enemies)
+        // {
+        //   Vector3 pos = enemy.transform.position;
+        //   // Debug.Log(pos);
+        //   Transform healthBarTransform = Instantiate(pfHealthBar, new Vector3(pos.x, pos.y + (float)0.5), Quaternion.identity);
+        //   HealthBar healthBar = healthBarTransform.GetComponent<HealthBar>();
+        //   healthBar.Setup(healthSystem);
 
-    //   healthBar.transform.parent = enemy.transform;
+        //   healthBar.transform.parent = enemy.transform;
 
-    //   // testing healthBar
-    //   // Debug.Log("Health: " + healthSystem.GetHealthPercent());
-    //   // healthSystem.Damage(50);
-    //   // Debug.Log("Damaged: " + healthSystem.GetHealthPercent());
-    //   // healthSystem.Heal(30);
-    //   // Debug.Log("Healed: " + healthSystem.GetHealthPercent());
-    // }
+        //   // testing healthBar
+        //   // Debug.Log("Health: " + healthSystem.GetHealthPercent());
+        //   // healthSystem.Damage(50);
+        //   // Debug.Log("Damaged: " + healthSystem.GetHealthPercent());
+        //   // healthSystem.Heal(30);
+        //   // Debug.Log("Healed: " + healthSystem.GetHealthPercent());
+        // }
 
-    for (int i = 0; i < enemies.Length; i++)
-    {
-      Vector3 pos = enemies[i].transform.position;
-      Transform healthBarTransform = Instantiate(pfHealthBar, new Vector3(pos.x, pos.y + (float)0.5), Quaternion.identity);
-      HealthBar healthBar = healthBarTransform.GetComponent<HealthBar>();
-      healthBar.Setup(healthSystem);
+        //for (int i = 0; i < enemies.Length; i++)
+        //{
+        //  Vector3 pos = enemies[i].transform.position;
+        //  Transform healthBarTransform = Instantiate(pfHealthBar, new Vector3(pos.x, pos.y + (float)0.5), Quaternion.identity);
+        //  HealthBar healthBar = healthBarTransform.GetComponent<HealthBar>();
+        //  healthBar.Setup(healthSystem);
 
-      healthBar.transform.parent = enemies[i].transform;
+        //  healthBar.transform.parent = enemies[i].transform;
+        //}
+        Vector3 pos = this.transform.position;
+        Transform healthBarTransform = Instantiate(pfHealthBar, new Vector3(pos.x, pos.y + (float)0.5), Quaternion.identity);
+        hb = healthBarTransform.GetComponent<HealthBar>();
+        hb.Setup(healthSystem);
+
     }
-
-
-  }
 
   // Update is called once per frame
   void Update()
@@ -97,7 +102,9 @@ public class EnemyAttack : HealthBar
     {
       animator.Play("Ghost");
     }
-  }
+        Vector3 pos = this.transform.position;
+        hb.transform.position = new Vector3(pos.x, pos.y + (float)0.5);
+    }
 
   private void OnDrawGizmosSelected()
   {
@@ -139,11 +146,15 @@ public class EnemyAttack : HealthBar
 
     damaged = true;
     Debug.Log("Damaged: " + healthSystem.GetHealthPercent());
-    if (healthSystem.GetHealthPercent() == 0)
+        
+    if (healthSystem.GetHealthPercent() <= 0)
     {
-      Destroy(enemy);
-      audioData.Stop();
-      //Destroy(gameObject);
+      //Destroy(enemy);
+            audioData.Stop();
+            //hb.;
+            Destroy(hb.gameObject);
+            Destroy(gameObject);
+            
       //audioData.Stop();
       //Destroy(GameObject.FindGameObjectWithTag("Player"));
       //SceneManager.LoadScene("GameOver");
