@@ -124,6 +124,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Colisao E
       objectReference: {fileID: 0}
+    - target: {fileID: 311393507716276885, guid: 2796c2d443e154942933da80f665ca1a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7540305108761681259, guid: 2796c2d443e154942933da80f665ca1a,
         type: 3}
       propertyPath: m_LocalPosition.x
