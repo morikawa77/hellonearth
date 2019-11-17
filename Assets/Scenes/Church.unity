@@ -41659,6 +41659,72 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2520757411276236278, guid: c494ab155b17055499eb2c65e51b1522,
         type: 3}
+    - target: {fileID: 1397506291411823314, guid: 074b609b8a44bf540ba32bd233b5f915,
+        type: 3}
+      propertyPath: angel1
+      value: 
+      objectReference: {fileID: 999039323104042436, guid: 58df3d34af8fb8f4db8b419abab9dfc0,
+        type: 3}
+    - target: {fileID: 1397506291411823314, guid: 074b609b8a44bf540ba32bd233b5f915,
+        type: 3}
+      propertyPath: angel2
+      value: 
+      objectReference: {fileID: 999039323104042436, guid: 58df3d34af8fb8f4db8b419abab9dfc0,
+        type: 3}
+    - target: {fileID: 1397506291411823314, guid: 074b609b8a44bf540ba32bd233b5f915,
+        type: 3}
+      propertyPath: angel3
+      value: 
+      objectReference: {fileID: 999039323104042436, guid: 58df3d34af8fb8f4db8b419abab9dfc0,
+        type: 3}
+    - target: {fileID: 1397506291411823314, guid: 074b609b8a44bf540ba32bd233b5f915,
+        type: 3}
+      propertyPath: demian
+      value: 
+      objectReference: {fileID: 2062327608472060401, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1,
+        type: 3}
+    - target: {fileID: 1397506291411823314, guid: 074b609b8a44bf540ba32bd233b5f915,
+        type: 3}
+      propertyPath: flamehead1
+      value: 
+      objectReference: {fileID: 2520757411276236278, guid: c494ab155b17055499eb2c65e51b1522,
+        type: 3}
+    - target: {fileID: 1397506291411823314, guid: 074b609b8a44bf540ba32bd233b5f915,
+        type: 3}
+      propertyPath: flamehead2
+      value: 
+      objectReference: {fileID: 2520757411276236278, guid: c494ab155b17055499eb2c65e51b1522,
+        type: 3}
+    - target: {fileID: 1397506291411823314, guid: 074b609b8a44bf540ba32bd233b5f915,
+        type: 3}
+      propertyPath: flamehead3
+      value: 
+      objectReference: {fileID: 2520757411276236278, guid: c494ab155b17055499eb2c65e51b1522,
+        type: 3}
+    - target: {fileID: 1397506291411823314, guid: 074b609b8a44bf540ba32bd233b5f915,
+        type: 3}
+      propertyPath: flamehead4
+      value: 
+      objectReference: {fileID: 2520757411276236278, guid: c494ab155b17055499eb2c65e51b1522,
+        type: 3}
+    - target: {fileID: 1397506291411823314, guid: 074b609b8a44bf540ba32bd233b5f915,
+        type: 3}
+      propertyPath: ghost1
+      value: 
+      objectReference: {fileID: 4756865321800936219, guid: 8988b6651e3659a4490d00a314d8a1f1,
+        type: 3}
+    - target: {fileID: 1397506291411823314, guid: 074b609b8a44bf540ba32bd233b5f915,
+        type: 3}
+      propertyPath: ghost2
+      value: 
+      objectReference: {fileID: 4756865321800936219, guid: 8988b6651e3659a4490d00a314d8a1f1,
+        type: 3}
+    - target: {fileID: 1397506291411823314, guid: 074b609b8a44bf540ba32bd233b5f915,
+        type: 3}
+      propertyPath: ghost3
+      value: 
+      objectReference: {fileID: 4756865321800936219, guid: 8988b6651e3659a4490d00a314d8a1f1,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 074b609b8a44bf540ba32bd233b5f915, type: 3}
 --- !u!1001 &1501638737

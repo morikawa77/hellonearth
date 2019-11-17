@@ -165,6 +165,7 @@ MonoBehaviour:
   seguir: 0
   pfHealthBar: {fileID: 4090514546342678, guid: 01a6b42a1d84b664c890d8dcb066becd,
     type: 3}
+  james: {fileID: 0}
 --- !u!95 &637743844
 Animator:
   serializedVersion: 3

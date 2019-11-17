@@ -26,7 +26,10 @@ public class EnemyAttack : MonoBehaviour
   // Health System
   public Transform pfHealthBar;
 
-    public HealthBar hb;
+  GameObject[] enemies;
+
+
+
 
   void Start()
   {
@@ -38,41 +41,21 @@ public class EnemyAttack : MonoBehaviour
 
 
     // health system
-    GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-        // foreach (GameObject enemy in enemies)
-        // {
-        //   Vector3 pos = enemy.transform.position;
-        //   // Debug.Log(pos);
-        //   Transform healthBarTransform = Instantiate(pfHealthBar, new Vector3(pos.x, pos.y + (float)0.5), Quaternion.identity);
-        //   HealthBar healthBar = healthBarTransform.GetComponent<HealthBar>();
-        //   healthBar.Setup(healthSystem);
+    // GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+    // for (int i = 0; i < enemies.Length; i++)
+    // {
+    //   Vector3 pos = enemies[i].transform.position;
+    //   Transform healthBarTransform = Instantiate(pfHealthBar, new Vector3(pos.x, pos.y + (float)0.5), Quaternion.identity);
+    //   HealthBar healthBar = healthBarTransform.GetComponent<HealthBar>();
+    //   healthBar.Setup(healthSystem);
 
-        //   healthBar.transform.parent = enemy.transform;
+    //   healthBar.transform.parent = enemies[i].transform;
+    // }
 
-        //   // testing healthBar
-        //   // Debug.Log("Health: " + healthSystem.GetHealthPercent());
-        //   // healthSystem.Damage(50);
-        //   // Debug.Log("Damaged: " + healthSystem.GetHealthPercent());
-        //   // healthSystem.Heal(30);
-        //   // Debug.Log("Healed: " + healthSystem.GetHealthPercent());
-        // }
 
-        //for (int i = 0; i < enemies.Length; i++)
-        //{
-        //  Vector3 pos = enemies[i].transform.position;
-        //  Transform healthBarTransform = Instantiate(pfHealthBar, new Vector3(pos.x, pos.y + (float)0.5), Quaternion.identity);
-        //  HealthBar healthBar = healthBarTransform.GetComponent<HealthBar>();
-        //  healthBar.Setup(healthSystem);
 
-        //  healthBar.transform.parent = enemies[i].transform;
-        //}
-        Vector3 pos = this.transform.position;
-        Transform healthBarTransform = Instantiate(pfHealthBar, new Vector3(pos.x, pos.y + (float)0.5), Quaternion.identity);
-        hb = healthBarTransform.GetComponent<HealthBar>();
-        hb.Setup(healthSystem);
-
-    }
+  }
 
   // Update is called once per frame
   void Update()
@@ -102,9 +85,10 @@ public class EnemyAttack : MonoBehaviour
     {
       animator.Play("Ghost");
     }
-        Vector3 pos = this.transform.position;
-        hb.transform.position = new Vector3(pos.x, pos.y + (float)0.5);
-    }
+    Vector3 pos = this.transform.position;
+
+
+  }
 
   private void OnDrawGizmosSelected()
   {
@@ -146,26 +130,19 @@ public class EnemyAttack : MonoBehaviour
 
     damaged = true;
     Debug.Log("Damaged: " + healthSystem.GetHealthPercent());
-        
+
     if (healthSystem.GetHealthPercent() <= 0)
     {
-      //Destroy(enemy);
-            audioData.Stop();
-            //hb.;
-            Destroy(hb.gameObject);
-            Destroy(gameObject);
-            
-      //audioData.Stop();
-      //Destroy(GameObject.FindGameObjectWithTag("Player"));
-      //SceneManager.LoadScene("GameOver");
+      audioData.Stop();
+      Destroy(gameObject);
     }
 
-    //if (damaged == true)
-    //{
-    //    animator.Play("James-Hurt");
-    //    damaged = false;
-    //}
-    //animator.Play("James-Idle");
+    // testing healthBar
+    Debug.Log("Health: " + healthSystem.GetHealthPercent());
+    // healthSystem.Damage(50);
+    // Debug.Log("Damaged: " + healthSystem.GetHealthPercent());
+    // healthSystem.Heal(30);
+    // Debug.Log("Healed: " + healthSystem.GetHealthPercent());
 
   }
 }
