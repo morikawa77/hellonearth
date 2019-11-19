@@ -13,7 +13,7 @@ public class EnemyAttack : MonoBehaviour
   public float radiusAtack = 1.50f;
   private Transform target;
   public float distancia;
-  public float timeNextAtack = 0.5f;
+  public float timeNextAtack = 0f;
   public float naoEmpurra;
   SpriteRenderer spriteRenderer;
   public Animator animator;
@@ -105,7 +105,7 @@ public class EnemyAttack : MonoBehaviour
       if (timeNextAtack <= 0)
       {
         Debug.Log(enimiesAttack[i].name);
-        timeNextAtack = 2f;
+        timeNextAtack = 1.1f;
         InimigoAttackHandler();
       }
       else
@@ -118,7 +118,7 @@ public class EnemyAttack : MonoBehaviour
   public void InimigoAttackHandler()
   {
     Debug.Log("James recebeu ataque");
-    player.jamesDamaged(25);
+    player.jamesDamaged(35);
   }
 
 
