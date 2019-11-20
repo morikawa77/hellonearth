@@ -28,13 +28,13 @@ public class FlameHead : MonoBehaviour
   AudioSource audioData;
   void Start()
   {
-    // rb = GetComponent<Rigidbody2D>();
-    // spriteRenderer = GetComponent<SpriteRenderer>();
-    // player = GameObject.FindGameObjectWithTag("Enemy").GetComponent<PlayerPlatformerController>();
-    // animator = GetComponent<Animator>();
-    // target = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Transform>();
+        rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        player = GameObject.FindGameObjectWithTag("Enemy").GetComponent<PlayerPlatformerController>();
+        animator = GetComponent<Animator>();
+        // target = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Transform>();
 
-    player = GameObject.FindWithTag("Player").GetComponent<PlayerPlatformerController>();
+        player = GameObject.FindWithTag("Player").GetComponent<PlayerPlatformerController>();
     target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     spriteRenderer = GetComponent<SpriteRenderer>();
     animator = GetComponent<Animator>();
@@ -54,41 +54,41 @@ public class FlameHead : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-    // rb.velocity = new Vector2(speed, rb.velocity.y);
-    // if (colide)
-    // {
-    //   flip();
-    // }
+        rb.velocity = new Vector2(speed, rb.velocity.y);
+        if (colide)
+        {
+            flip();
+        }
 
-    // if (Vector2.Distance(transform.position, target.position) <= naoEmpurra)
-    // {
+        // if (Vector2.Distance(transform.position, target.position) <= naoEmpurra)
+        // {
 
-    //   if (player.flipar)
-    //   {
-
-
-    //     spriteRenderer.flipX = true;
-    //     animator.Play("Enemy-Attack");
-
-    //     InimigoAtack();
-    //   }
-    //   else if (player.flipar == false)
-    //   {
+        //   if (player.flipar)
+        //   {
 
 
-    //     spriteRenderer.flipX = false;
-    //     animator.Play("Enemy-Attack");
+        //     spriteRenderer.flipX = true;
+        //     animator.Play("Enemy-Attack");
 
-    //     InimigoAtack();
-    //   }
+        //     InimigoAtack();
+        //   }
+        //   else if (player.flipar == false)
+        //   {
 
-    // }
-    // else
-    // {
-    //   animator.Play("Enemy");
-    // }
 
-    if (Vector2.Distance(transform.position, target.position) <= naoEmpurra)
+        //     spriteRenderer.flipX = false;
+        //     animator.Play("Enemy-Attack");
+
+        //     InimigoAtack();
+        //   }
+
+        // }
+        // else
+        // {
+        //   animator.Play("Enemy");
+        // }
+
+        if (Vector2.Distance(transform.position, target.position) <= naoEmpurra)
     {
 
       if (player.flipar)

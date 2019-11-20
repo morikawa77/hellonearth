@@ -7179,25 +7179,25 @@ PrefabInstance:
         type: 3}
       propertyPath: flamehead1
       value: 
-      objectReference: {fileID: 4756865321800936219, guid: 8988b6651e3659a4490d00a314d8a1f1,
+      objectReference: {fileID: 2520757411276236278, guid: c494ab155b17055499eb2c65e51b1522,
         type: 3}
     - target: {fileID: 1397506291411823314, guid: 074b609b8a44bf540ba32bd233b5f915,
         type: 3}
       propertyPath: flamehead2
       value: 
-      objectReference: {fileID: 4756865321800936219, guid: 8988b6651e3659a4490d00a314d8a1f1,
+      objectReference: {fileID: 2520757411276236278, guid: c494ab155b17055499eb2c65e51b1522,
         type: 3}
     - target: {fileID: 1397506291411823314, guid: 074b609b8a44bf540ba32bd233b5f915,
         type: 3}
       propertyPath: flamehead3
       value: 
-      objectReference: {fileID: 4756865321800936219, guid: 8988b6651e3659a4490d00a314d8a1f1,
+      objectReference: {fileID: 2520757411276236278, guid: c494ab155b17055499eb2c65e51b1522,
         type: 3}
     - target: {fileID: 1397506291411823314, guid: 074b609b8a44bf540ba32bd233b5f915,
         type: 3}
       propertyPath: flamehead4
       value: 
-      objectReference: {fileID: 4756865321800936219, guid: 8988b6651e3659a4490d00a314d8a1f1,
+      objectReference: {fileID: 2520757411276236278, guid: c494ab155b17055499eb2c65e51b1522,
         type: 3}
     - target: {fileID: 1397506291411823314, guid: 074b609b8a44bf540ba32bd233b5f915,
         type: 3}
