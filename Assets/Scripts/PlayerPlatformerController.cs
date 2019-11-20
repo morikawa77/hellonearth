@@ -167,12 +167,27 @@ public class PlayerPlatformerController : PhysicsObject
     {
       if (timeNextAtack <= 0)
       {
-        Debug.Log(playerAttack[i].name);
+        // Debug.Log(playerAttack[i].name);
         timeNextAtack = 0f;
 
-        Enemy enemy = GameObject.Find(playerAttack[i].name).GetComponent<Enemy>();
-        Debug.Log(playerAttack[i].name + "Inimigo recebeu ataque");
-        enemy.enemyDamaged(25);
+        if (playerAttack[i].name == "Enemy(Clone)")
+        {
+          FlameHead enemy = GameObject.Find(playerAttack[i].name).GetComponent<FlameHead>();
+          Debug.Log(playerAttack[i].name + "Inimigo recebeu ataque");
+          enemy.enemyDamaged(25);
+        }
+        else if (playerAttack[i].name == "EnemyGhost(Clone)")
+        {
+          EnemyAttack enemy = GameObject.Find(playerAttack[i].name).GetComponent<EnemyAttack>();
+          Debug.Log(playerAttack[i].name + "Inimigo recebeu ataque");
+          enemy.enemyDamaged(25);
+        }
+        else if (playerAttack[i].name == "Anjo(Clone)")
+        {
+          EnemyAngel enemy = GameObject.Find(playerAttack[i].name).GetComponent<EnemyAngel>();
+          Debug.Log(playerAttack[i].name + "Inimigo recebeu ataque");
+          enemy.enemyDamaged(25);
+        }
 
       }
       else
