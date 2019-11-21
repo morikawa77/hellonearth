@@ -32,7 +32,7 @@ public class FlameHead : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         player = GameObject.FindGameObjectWithTag("Enemy").GetComponent<PlayerPlatformerController>();
         animator = GetComponent<Animator>();
-        // target = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Transform>();
+        target = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Transform>();
 
         player = GameObject.FindWithTag("Player").GetComponent<PlayerPlatformerController>();
     target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
@@ -88,20 +88,20 @@ public class FlameHead : MonoBehaviour
         //   animator.Play("Enemy");
         // }
 
-        if (Vector2.Distance(transform.position, target.position) <= naoEmpurra)
+    if (Vector2.Distance(transform.position, target.position) <= naoEmpurra)
     {
 
       if (player.flipar)
       {
 
-        spriteRenderer.flipX = false;
+        spriteRenderer.flipX = true;
         animator.Play("Enemy-Attack");
 
         InimigoAtack();
       }
       else if (player.flipar == false)
       {
-        spriteRenderer.flipX = true;
+        spriteRenderer.flipX = false;
         animator.Play("Enemy-Attack");
 
         InimigoAtack();
@@ -119,6 +119,7 @@ public class FlameHead : MonoBehaviour
     speed *= -1;
     spriteRenderer.flipX = !spriteRenderer.flipX;
     colide = false;
+    
 
   }
   private void OnTriggerEnter2D(Collider2D collision)

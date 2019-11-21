@@ -252,6 +252,12 @@ public class PlayerPlatformerController : PhysicsObject
     Gizmos.DrawWireSphere(verifica.position, radiusAtack);
     Gizmos.DrawWireSphere(verifica1.position, radiusAtack);
   }
+  public void jamesHeal(int heal)
+  {
+
+        healthSystem.Heal(heal);
+        Debug.Log("heal " + healthSystem.GetHealthPercent());
+    }
   public void jamesDamaged(int damage)
   {
 
