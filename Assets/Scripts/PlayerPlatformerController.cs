@@ -257,7 +257,7 @@ public class PlayerPlatformerController : PhysicsObject
 
         healthSystem.Heal(heal);
         Debug.Log("heal " + healthSystem.GetHealthPercent());
-    }
+  }
   public void jamesDamaged(int damage)
   {
 

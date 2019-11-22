@@ -17,6 +17,20 @@ public class Beer : MonoBehaviour
         Debug.Log("James recebeu ataque");
         player.jamesHeal(50);
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+
+            hitBeer();
+            Destroy(gameObject);
+
+
+        }
+
+
+    }
     // Update is called once per frame
     void Update()
     {

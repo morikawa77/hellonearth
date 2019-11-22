@@ -41497,6 +41497,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1398797560}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &707510616
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 707510617}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &707510617
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707510616}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 27.96, y: -0.17, z: 0.060062833}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &722352149
 GameObject:
   m_ObjectHideFlags: 0
@@ -42498,36 +42528,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1397506291411823314, guid: 074b609b8a44bf540ba32bd233b5f915,
-        type: 3}
-      propertyPath: beer
-      value: 
-      objectReference: {fileID: 1682693803416931148, guid: 3f328dd26ae423b4cb2cd97ea270af78,
-        type: 3}
-    - target: {fileID: 1397506291411823314, guid: 074b609b8a44bf540ba32bd233b5f915,
-        type: 3}
-      propertyPath: beer1
-      value: 
-      objectReference: {fileID: 1682693803416931148, guid: 3f328dd26ae423b4cb2cd97ea270af78,
-        type: 3}
-    - target: {fileID: 1397506291411823314, guid: 074b609b8a44bf540ba32bd233b5f915,
-        type: 3}
-      propertyPath: beer2
-      value: 
-      objectReference: {fileID: 1682693803416931148, guid: 3f328dd26ae423b4cb2cd97ea270af78,
-        type: 3}
-    - target: {fileID: 1397506291411823314, guid: 074b609b8a44bf540ba32bd233b5f915,
-        type: 3}
-      propertyPath: beer3
-      value: 
-      objectReference: {fileID: 1682693803416931148, guid: 3f328dd26ae423b4cb2cd97ea270af78,
-        type: 3}
-    - target: {fileID: 1397506291411823314, guid: 074b609b8a44bf540ba32bd233b5f915,
-        type: 3}
-      propertyPath: beer4
-      value: 
-      objectReference: {fileID: 1682693803416931148, guid: 3f328dd26ae423b4cb2cd97ea270af78,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 074b609b8a44bf540ba32bd233b5f915, type: 3}
 --- !u!1001 &1501638737

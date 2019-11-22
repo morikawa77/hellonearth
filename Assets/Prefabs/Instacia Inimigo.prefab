@@ -49,6 +49,7 @@ MonoBehaviour:
   beer2: {fileID: 1682693803416931148, guid: 3f328dd26ae423b4cb2cd97ea270af78, type: 3}
   beer3: {fileID: 1682693803416931148, guid: 3f328dd26ae423b4cb2cd97ea270af78, type: 3}
   beer4: {fileID: 1682693803416931148, guid: 3f328dd26ae423b4cb2cd97ea270af78, type: 3}
+  beer5: {fileID: 1682693803416931148, guid: 3f328dd26ae423b4cb2cd97ea270af78, type: 3}
   flamehead1: {fileID: 2520757411276236278, guid: c494ab155b17055499eb2c65e51b1522,
     type: 3}
   flamehead2: {fileID: 2520757411276236278, guid: c494ab155b17055499eb2c65e51b1522,
@@ -67,4 +68,4 @@ MonoBehaviour:
   angel2: {fileID: 999039323104042436, guid: 58df3d34af8fb8f4db8b419abab9dfc0, type: 3}
   angel3: {fileID: 999039323104042436, guid: 58df3d34af8fb8f4db8b419abab9dfc0, type: 3}
   angel4: {fileID: 999039323104042436, guid: 58df3d34af8fb8f4db8b419abab9dfc0, type: 3}
-  demian: {fileID: 2062327608472060401, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1, type: 3}
+  demian: {fileID: 5572924370117381989, guid: c4dcb53a4712000468f7cd2dd3483a45, type: 3}
