@@ -225,6 +225,12 @@ public class PlayerPlatformerController : PhysicsObject
           Debug.Log(playerAttack[i].name + "Inimigo recebeu ataque");
           enemy.enemyDamaged(25);
         }
+        else if (playerAttack[i].name == "Demian(Clone)")
+        {
+          Demian enemy = GameObject.Find(playerAttack[i].name).GetComponent<Demian>();
+          Debug.Log(playerAttack[i].name + "Inimigo recebeu ataque");
+          enemy.enemyDamaged(5);
+        }
 
       }
       else
@@ -255,8 +261,8 @@ public class PlayerPlatformerController : PhysicsObject
   public void jamesHeal(int heal)
   {
 
-        healthSystem.Heal(heal);
-        Debug.Log("heal " + healthSystem.GetHealthPercent());
+    healthSystem.Heal(heal);
+    Debug.Log("heal " + healthSystem.GetHealthPercent());
   }
   public void jamesDamaged(int damage)
   {

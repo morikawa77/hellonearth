@@ -30,13 +30,13 @@ public class MudarCenas : MonoBehaviour
   {
     SceneManager.LoadScene("Options");
   }
-  public void Exit() 
+  public void Exit()
   {
-     Application.Quit();
+    Application.Quit();
   }
   private void OnTriggerEnter2D(Collider2D collision)
   {
-    if (collision.gameObject.CompareTag("Player"))
+    if ((collision.gameObject.CompareTag("Player")) && (SceneManager.GetActiveScene().name != "Boss Final"))
     {
       // UnityEngine.SceneManagement.SceneManager.LoadScene("Cemetery");
       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

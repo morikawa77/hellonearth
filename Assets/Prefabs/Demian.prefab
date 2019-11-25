@@ -187,7 +187,9 @@ MonoBehaviour:
   radiusAtack: 1.21
   naoEmpurra: 0
   target: {fileID: 2172803550817287420, guid: 57ad0ef5cb311cc43921e1bc7a5b16d1, type: 3}
-  myTransform: {fileID: 0}
+  myTransform: {fileID: 7332251430685882067}
+  pfHealthBar: {fileID: 4090514546342678, guid: 01a6b42a1d84b664c890d8dcb066becd,
+    type: 3}
 --- !u!95 &4593097704676442038
 Animator:
   serializedVersion: 3

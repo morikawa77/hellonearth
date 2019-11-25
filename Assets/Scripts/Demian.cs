@@ -1,173 +1,164 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Demian : MonoBehaviour
 {
 
-    [SerializeField] private float _speed = 1;
-    [SerializeField] private float _rayCastOffset = 0.5f;
-    // [SerializeField] private float _rayCastDistance = 1f;
-    PlayerPlatformerController player;
-    public Transform verifica;
-    public float distanciaMov = 1.50f;
-    public float _moveDir = 1;
-    Animator animator;
-    public float timeNextAtack = 2f;
-    Rigidbody2D rb;
-    public LayerMask layerEnemy;
-    public Transform verifica2;
-    public float radiusAtack = 1.50f;
-    HealthSystem healthSystem = new HealthSystem(100);
-    //public Transform pfHealthBar;
-    public float naoEmpurra;
-    bool damaged = false;
-    AudioSource audioData;
-    SpriteRenderer spriteRenderer;
-    public Transform target;//set target from inspector instead of looking in Update
-    public Transform myTransform;
-    // Start is called before the first frame update
-    void Start()
-    {
-        animator = GetComponent<Animator>();
-        audioData = GetComponent<AudioSource>();
+  [SerializeField] private float _speed = 1;
+  [SerializeField] private float _rayCastOffset = 0.5f;
+  PlayerPlatformerController player;
+  public Transform verifica;
+  public float distanciaMov = 1.50f;
+  public float _moveDir = 1;
+  Animator animator;
+  public float timeNextAtack = 2f;
+  Rigidbody2D rb;
+  public LayerMask layerEnemy;
+  public Transform verifica2;
+  public float radiusAtack = 1.50f;
+  HealthSystem healthSystem = new HealthSystem(100);
+  //public Transform pfHealthBar;
+  public float naoEmpurra;
+  bool damaged = false;
+  AudioSource audioData;
+  SpriteRenderer spriteRenderer;
+  public Transform target;//set target from inspector instead of looking in Update
+  public Transform myTransform;
+  // Start is called before the first frame update
 
-        rb = FindClosestEnemy().GetComponent<Rigidbody2D>();
-        spriteRenderer = FindClosestEnemy().GetComponent<SpriteRenderer>();
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPlatformerController>();
-        animator = FindClosestEnemy().GetComponent<Animator>();
-        myTransform = FindClosestEnemy().GetComponent<Transform>();
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        
-    }
+  public Transform pfHealthBar;
+  void Start()
+  {
+    animator = GetComponent<Animator>();
+    audioData = GetComponent<AudioSource>();
 
-    // Update is called once per frame
-    void Update()
-    {
+    rb = this.GetComponent<Rigidbody2D>();
+    spriteRenderer = this.GetComponent<SpriteRenderer>();
+    player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPlatformerController>();
+    animator = this.GetComponent<Animator>();
+    myTransform = this.GetComponent<Transform>();
+    target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
-        seguir();
-        if (Vector2.Distance(transform.position, target.position) <= naoEmpurra)
-        {
+    // health system
 
-            if (player.flipar)
-            {
+    GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
 
-                spriteRenderer.flipX = true;
-                animator.Play("Demian-attack");
+    Transform healthBarTransform = Instantiate(pfHealthBar, new Vector3(0, (float)3.5), Quaternion.identity);
+    HealthBar healthBar = healthBarTransform.GetComponent<HealthBar>();
+    healthBar.Setup(healthSystem);
 
-                InimigoAtack();
-            }
-            else if (player.flipar == false)
-            {
-                spriteRenderer.flipX = false;
-                animator.Play("Demian-attack");
+    healthBar.transform.localScale = new Vector3(0.3f, 0.07f, 0.05f);
 
-                InimigoAtack();
-            }
+  }
 
-        }
-        else
-        {
-            animator.Play("Demian-run");
-        }
-        Vector3 pos = this.transform.position;
-    }
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(verifica.position, distanciaMov);
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(verifica2.position, radiusAtack);
-    }
-    void InimigoAtack()
-    {
-        Collider2D[] enimiesAttack = Physics2D.OverlapCircleAll(verifica2.position, radiusAtack, layerEnemy);
-        for (int i = 0; i < enimiesAttack.Length; i++)
-        {
+  // Update is called once per frame
+  void Update()
+  {
 
-            if (timeNextAtack <= 0)
-            {
-                Debug.Log(enimiesAttack[i].name);
-                timeNextAtack = 1.5f;
-                InimigoAttackHandler();
-            }
-            else
-            {
-                timeNextAtack -= Time.deltaTime;
-            }
-        }
-    }
-
-    public void seguir()
+    seguir();
+    if (Vector2.Distance(transform.position, target.position) <= naoEmpurra)
     {
 
-  
-        rb.velocity = new Vector2(-_moveDir, rb.velocity.y);
+      if (player.flipar)
+      {
+
         spriteRenderer.flipX = true;
-        if (player.seguir && Vector2.Distance(transform.position, target.position) <= distanciaMov)
-        {
-            
-            if (player.flipar)
-            {
-                Debug.Log("metodoseguir ");
-                transform.position = Vector2.MoveTowards(transform.position, target.position, _moveDir * Time.deltaTime);
-                spriteRenderer.flipX = false;
-            }
-            else
-            {
-                Debug.Log("metodoseguir2 ");
-                transform.position = Vector2.MoveTowards(transform.position, target.position, _moveDir * Time.deltaTime);
-                spriteRenderer.flipX = true;
-            }
+        animator.Play("Demian-attack");
 
+        InimigoAtack();
+      }
+      else if (player.flipar == false)
+      {
+        spriteRenderer.flipX = false;
+        animator.Play("Demian-attack");
 
-        }
+        InimigoAtack();
+      }
 
     }
-    public GameObject FindClosestEnemy()
+    else
     {
-        GameObject[] gos;
-        gos = GameObject.FindGameObjectsWithTag("Enemy");
-        GameObject closest = null;
-        float distance = Mathf.Infinity;
-        Vector3 position = transform.position;
-        foreach (GameObject go in gos)
-        {
-            Vector3 diff = go.transform.position - position;
-            float curDistance = diff.sqrMagnitude;
-            if (curDistance < distance)
-            {
-                closest = go;
-                distance = curDistance;
-            }
-        }
-        return closest;
+      animator.Play("Demian-run");
     }
-
-
-    public void InimigoAttackHandler()
-    {
-        Debug.Log("James recebeu ataque");
-        player.jamesDamaged(25);
-    }
-
-    public void enemyDamaged(int damage)
+    Vector3 pos = this.transform.position;
+  }
+  private void OnDrawGizmosSelected()
+  {
+    Gizmos.color = Color.red;
+    Gizmos.DrawWireSphere(verifica.position, distanciaMov);
+    Gizmos.color = Color.green;
+    Gizmos.DrawWireSphere(verifica2.position, radiusAtack);
+  }
+  void InimigoAtack()
+  {
+    Collider2D[] enemiesAttack = Physics2D.OverlapCircleAll(verifica2.position, radiusAtack, layerEnemy);
+    for (int i = 0; i < enemiesAttack.Length; i++)
     {
 
+      if (timeNextAtack <= 0)
+      {
+        Debug.Log(enemiesAttack[i].name);
+        timeNextAtack = 1.5f;
+        InimigoAttackHandler();
+      }
+      else
+      {
+        timeNextAtack -= Time.deltaTime;
+      }
+    }
+  }
 
-        healthSystem.Damage(damage);
+  public void seguir()
+  {
 
-        damaged = true;
-        Debug.Log("Damaged: " + healthSystem.GetHealthPercent());
 
-        if (healthSystem.GetHealthPercent() <= 0)
-        {
-            audioData.Stop();
-            Destroy(gameObject);
+    rb.velocity = new Vector2(-_moveDir, rb.velocity.y);
+    spriteRenderer.flipX = true;
+    if (player.seguir && Vector2.Distance(transform.position, target.position) <= distanciaMov)
+    {
 
-        }
+      if (player.flipar)
+      {
+        Debug.Log("metodoseguir ");
+        transform.position = Vector2.MoveTowards(transform.position, target.position, _moveDir * Time.deltaTime);
+        spriteRenderer.flipX = false;
+      }
+      else
+      {
+        Debug.Log("metodoseguir2 ");
+        transform.position = Vector2.MoveTowards(transform.position, target.position, _moveDir * Time.deltaTime);
+        spriteRenderer.flipX = true;
+      }
+
 
     }
 
-    
+  }
+
+
+  public void InimigoAttackHandler()
+  {
+    Debug.Log("James recebeu ataque");
+    player.jamesDamaged(25);
+  }
+
+  public void enemyDamaged(int damage)
+  {
+
+    healthSystem.Damage(damage);
+
+    damaged = true;
+    Debug.Log("Damaged: " + healthSystem.GetHealthPercent());
+
+    if (healthSystem.GetHealthPercent() <= 0)
+    {
+      //   audioData.Stop();
+      Destroy(gameObject);
+      // call next scene
+      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+  }
+
+
 }
